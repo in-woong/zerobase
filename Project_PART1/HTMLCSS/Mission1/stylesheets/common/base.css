@@ -1,0 +1,6 @@
+/* Base 스타일 작성 */
+*{
+    box-sizing: border-box;
+    font-size:20px;
+    font-family:"Noto Sans KR"
+}
