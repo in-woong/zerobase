@@ -31,7 +31,8 @@ span:nth-child(3) {
 }
 .cardLink {
   position: relative;
-  height: fit-content;
+  height: 310px;
+  border: 1px solid #c4c4c4;
   padding: 20px;
 }
 .hyperlink {
@@ -53,8 +54,11 @@ span:nth-child(3) {
   color: #f3f3f3;
   content: '>';
   position: absolute;
+  font-size: 11px;
   width: 6px;
   height: 10px;
+  left: calc(50% -6px / 2);
+  top: calc(50% - 10px / 2);
 }
 .hyperlink:hover,
 .hyperlink:focus {
@@ -70,4 +74,10 @@ span:nth-child(3) {
   font-size: 14px;
   line-height: 120%;
   margin-right: 16px;
+}
+.largeImg {
+  width: 502px;
+}
+.smallImge {
+  width: 243px;
 }
