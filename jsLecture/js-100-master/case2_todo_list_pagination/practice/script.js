@@ -8,7 +8,17 @@
   const $todos = get('.todos')
   const $form = get('.todo_form')
   const $todoInput = get('.todo_input')
+  const $pagination = get('.pagination')
   const API_URL = `http://localhost:3000/todos`
+
+  const currentPage = 1
+  const totalCount = 52
+  const pageCount = 5
+  const limit = 10
+
+  const pagination=()=>{
+    
+  }
 
   const createTodoElement = (item) => {
     const { id, content, completed } = item
