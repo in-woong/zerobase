@@ -163,12 +163,14 @@
 
   const isGameOver = () => {
     const head = option.snake[0]
-    const body1=option.snake[1]
-    option.snake.some((body, index) => {
-      console.log(option.snake)
-      console.log(index !== 0 && body.x === head.x && body.y === head.y)
-    })
+    return option.snake.some(
+      (body, index) =>
+        (index !== 0 && head.x === body.x && head.y === body.y) ||
+        head.x == 0 ||
+        head.y == 0
+    )
   }
+
   const setHighScore = () => {
     const localScore = option.highScore * 1 || 0
     const finalScore = $score.textContent.match(/(\d+)/)[0] * 1
@@ -210,14 +212,15 @@
         direction: 2,
         snake: [
           { x: 10, y: 10, direction: 2 },
-          { x: 10, y: 10, direction: 2 },
-          { x: 10, y: 10, direction: 2 },
+          { x: 10, y: 20, direction: 2 },
+          { x: 10, y: 30, direction: 2 },
         ],
         food: { x: 0, y: 0 },
         score: 0,
       }
       $score.innerHTML = `점수 : 0점`
       $highScore.innerHTML = `최고점수 : ${option.highScore}점`
+      randomFood()
       window.requestAnimationFrame(play)
     }
   }
