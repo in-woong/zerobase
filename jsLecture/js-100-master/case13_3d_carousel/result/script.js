@@ -10,7 +10,7 @@
   let selectedIndex = 0
 
   const rotateCarousel = () => {
-    const angle = (selectedIndex / cellCount) * -360
+    const angle = ((selectedIndex / cellCount) * 360) % 360
     carousel.style.transform = 'translateZ(-346px) rotateY(' + angle + 'deg)'
   }
 
