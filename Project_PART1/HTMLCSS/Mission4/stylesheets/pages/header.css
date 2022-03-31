@@ -11,7 +11,9 @@ li {
   align-items: center;
   margin: 0px;
   height: 34px;
-  padding: 0px 100px;
+  padding: 0px 200px;
+  padding-right: 250px;
+
   background-color: var(--color-gray-100);
   font-size: 12px;
 }
@@ -40,7 +42,7 @@ li {
 }
 .header {
   display: grid;
-  grid-template-columns: repeat(17, 55px);
+  grid-template-columns: repeat(18, 55px);
   grid-template-rows: repeat(4, 30px);
   gap: 3px;
   justify-content: center;
@@ -79,7 +81,7 @@ li {
 }
 
 .typeNavi {
-  grid-column-start: 4;
+  grid-column-start: 3;
   grid-row-start: 4;
   margin: auto;
 
@@ -105,10 +107,18 @@ li {
 }
 .form-select {
   border: none;
+  padding: 0px 10px;
+  background: url('../../assets/icon/triButton.svg') no-repeat;
+  background-size: 10%;
+  background-position: 90% center;
+
+  border-right: 1px solid var(--color-gray-100);
+  /* z-index: -1; */
   background-color: transparent;
   width: 135px;
   height: 40px;
   appearance: none;
+  color: var(--color-gray-700);
 }
 .form-select::after {
   content: url('../../assets/favicon/');
@@ -116,6 +126,10 @@ li {
 .form-input {
   border: none;
   background-color: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 10px;
+
   width: 301px;
   height: 40px;
 }
@@ -150,10 +164,11 @@ li {
   grid-column-start: 16;
   grid-row-start: 2;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  height: fit-content;
   width: fit-content;
 }
 
@@ -174,10 +189,12 @@ li {
 }
 .myCoupang-lists {
   display: none;
-  position: relative;
+  position: absolute;
+  top: 70px;
   font-size: 12px;
   padding: 10px;
   border: 1px solid var(--color-gray-400);
+  background-color: var(--color-white);
 }
 .is--active > ul {
   display: block;
@@ -206,9 +223,9 @@ li {
 .cart {
   grid-column-start: 17;
   grid-row-start: 2;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   width: fit-content;
 }
 .cart-btn {
@@ -218,8 +235,8 @@ li {
   background-image: url('../../assets/icon/cart.svg');
   background-repeat: no-repeat;
   background-size: 40px 40px;
-  background-position: center 16%;
-  padding: 43px 0px 0px 0px;
+  background-position: center center;
+  padding: 50px 0px 0px 0px;
 
   height: fit-content;
   width: 80px;
@@ -230,16 +247,21 @@ li {
 }
 
 .cart-incase {
+  position: absolute;
+  top: 80px;
+  right: 0px;
   display: none;
-  position: relative;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   height: 100px;
   border: 1px solid var(--color-gray-400);
+  background-color: var(--color-white);
 }
 
 .cart-num {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 15px;
   display: flex;
   justify-content: center;
@@ -253,6 +275,7 @@ li {
 }
 .cart-incase::after {
   position: absolute;
+
   top: -5px;
   right: 30px;
   content: ' ';
@@ -268,8 +291,6 @@ li {
 }
 .cart--empty > div {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .typeNavi {
   width: 755px;
