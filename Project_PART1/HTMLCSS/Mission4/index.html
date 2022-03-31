@@ -27,18 +27,19 @@
   <div class="header">
     <button class="button--category">카테고리</button>
 
-    <h1 class="logo">
-      <a href="https://www.coupang.com/" target="_blank">
+    <a class="logo" href="https://www.coupang.com/" target="_blank">
+      <h1>
         <span class="hidden">Coupang</span>
-      </a>
-    </h1>
+      </h1>
+    </a>
     <form class="form" action="submit" value="전체">
-      <select class="form-select" name="전체" id="">
+      <select class="form-select" name="전체" id="theme">
+        <option value="전체">전체</option>
         <option value="가전">가전</option>
         <option value="생활">생활</option>
         <option value="과일">과일</option>
       </select>
-      <input class="form-input" type="text">
+      <input class="form-input" placeholder="찾고 싶은 상품을 검색해 보세요!" type="text">
       <button class="form-btn mic" role="button">
       </button>
       <button class="form-btn search" role="button">
