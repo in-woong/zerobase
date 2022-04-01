@@ -71,6 +71,7 @@ body {
   white-space: normal;
 }
 .scroll-observer {
+  background-color: red;
   text-align: center;
   margin: 10px;
 }
