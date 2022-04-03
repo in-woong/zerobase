@@ -5,8 +5,9 @@
 /* ---------------------------------------------- */
 /* 내비게이션                                        */
 /* ---------------------------------------------- */
-
-
+.navigation {
+  display: none;
+}
 /* ---------------------------------------------- */
 /* 메인 콘텐츠                                       */
 /* ---------------------------------------------- */
@@ -18,3 +19,150 @@
 /* ---------------------------------------------- */
 /* 푸터                                            */
 /* ---------------------------------------------- */
+.footer .customerGuide {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-800);
+  font-size: 14px;
+}
+.footer .customerGuide .customerGuide-name {
+  min-width: fit-content;
+  padding: 0px 14px;
+}
+.footer .coupangInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 1200px;
+  height: 143px;
+  margin: 32px auto;
+
+  color: var(--color-gray-800);
+  font-size: 16px;
+}
+.footer .coupangInfo .logo {
+  display: block;
+  width: 176px;
+  height: 40px;
+  color: transparent;
+  background-image: url('../../assets/logo/logo-mono.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.footer .coupangInfo .infoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+}
+.footer .coupangInfo .customerCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+}
+
+.footer .coupangInfo .customerCenter .desc .desc-name {
+  display: inline-block;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  padding-right: 13px;
+  border-right: 1px solid var(--color-gray-800);
+}
+.footer .coupangInfo .customerCenter .desc .desc-desc {
+  display: inline-block;
+
+  padding-left: 13px;
+}
+.footer .coupangInfo .customerCenter .phoneNumber {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+.footer .coupangInfo .payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 100%;
+}
+.footer .coupangInfo .payment > span:nth-child(1) {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+.footer .coupangInfo .payment > span:nth-child(2) {
+  display: block;
+  width: 282px;
+}
+
+.footer .copyrightSNS {
+  width: 100%;
+  height: 102px;
+  font-size: 12px;
+  font-weight: 300;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  padding: 16px 0px;
+
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-200);
+}
+.footer .copyrightSNS .copyright {
+  display: flex;
+  flex-direction: column;
+}
+.footer .copyrightSNS .copyright .copyright-desc {
+  display: inline-block;
+}
+.footer .copyrightSNS .copyright {
+  margin-right: 50px;
+}
+.footer .copyrightSNS .SNS .SNS-icon{
+  margin-right:10px;
+}
+.footer .copyrightSNS .SNS .SNS-instagram {
+  margin-right:0px;
+  border-radius: 50%;
+  background: radial-gradient(
+      circle farthest-corner at 35% 90%,
+      #fec564,
+      transparent 50%
+    ),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 20% -50%,
+      #5258cf,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 60% -20%,
+      #893dc2,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    linear-gradient(
+      #6559ca,
+      #bc318f 30%,
+      #e33f5f 50%,
+      #f77638 70%,
+      #fec66d 100%
+    );
+}
