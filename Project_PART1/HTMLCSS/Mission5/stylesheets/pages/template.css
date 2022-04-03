@@ -133,11 +133,11 @@
 .footer .copyrightSNS .copyright {
   margin-right: 50px;
 }
-.footer .copyrightSNS .SNS .SNS-icon{
-  margin-right:10px;
+.footer .copyrightSNS .SNS .SNS-icon {
+  margin-right: 10px;
 }
 .footer .copyrightSNS .SNS .SNS-instagram {
-  margin-right:0px;
+  margin-right: 0px;
   border-radius: 50%;
   background: radial-gradient(
       circle farthest-corner at 35% 90%,
