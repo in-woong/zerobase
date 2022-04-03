@@ -144,6 +144,7 @@ export class MenuItem {
   }
 
   handleClick() {
+    console.log('click');
     this.menu.setFocusToController();
     this.menu.close(true);
   }

@@ -46,6 +46,7 @@ export class PopupMenu {
     this.domNode.addEventListener('mouseout', this.handleMouseOut.bind(this));
 
     childElement = this.domNode.firstElementChild;
+    console.log("CHILD",childElement);
 
     while (childElement) {
       menuElement = childElement.firstElementChild;
