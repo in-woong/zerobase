@@ -45,6 +45,7 @@ export class Menubar {
     this.hasHover = false;
 
     this.options = { ...Menubar.defaultOptions, ...options };
+    console.log(this.options);
   }
 
   init() {
@@ -108,10 +109,12 @@ export class Menubar {
 
     openner.addEventListener('mouseenter', () => {
       categoryHasHover = true;
+      console.log('mouseEnter');
       this.open();
     });
 
     openner.addEventListener('keydown', (event) => {
+      console.log('Keydown');
       if (event.keyCode == 13) {
         // Enter
         categoryHasHover = true;
@@ -124,6 +127,7 @@ export class Menubar {
     });
 
     openner.addEventListener('mouseleave', () => {
+      console.log('mouseLeave');
       categoryHasHover = false;
       setTimeout(() => {
         if (!categoryHasHover) {

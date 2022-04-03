@@ -23,6 +23,7 @@ export class MenubarItem {
   }
 
   init() {
+    console.log(this.domNode, 'DOMNODE');
     this.domNode.tabIndex = -1;
 
     this.domNode.addEventListener('keydown', this.handleKeydown.bind(this));
@@ -32,6 +33,7 @@ export class MenubarItem {
     this.domNode.addEventListener('mouseout', this.handleMouseOut.bind(this));
 
     let nextElement = this.domNode.nextElementSibling;
+    
 
     if (nextElement && nextElement.tagName === 'UL') {
       this.domNode.setAttribute('aria-controls', uuidv4());
@@ -121,6 +123,7 @@ export class MenubarItem {
 
   handleMouseOver() {
     this.hasHover = true;
+    console.log(this.popupMenu, 'HANDLE');
     if (this.popupMenu.open) {
       setTimeout(this.popupMenu.open.bind(this.popupMenu, false), 100);
     }

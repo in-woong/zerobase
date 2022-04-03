@@ -23,7 +23,17 @@
     <h1 class="sr-only">Coupang</h1>
     <div class="header__inner">
       <!-- 카테고리 버튼은 .header__inner 영역 안에 마크업 해주세요. -->
-      <button class="button--category">카테고리</button>
+      <button class="button--category">
+        <svg class="category-icon" width="30" height="30" viewBox="0 0 30 30" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 6H0V0H30V6Z" fill="white" />
+          <path d="M30 18H0V12H30V18Z" fill="white" />
+          <path d="M0 30H30V24H0V30Z" fill="white" />
+        </svg>
+        <span class="category-text">
+          카테고리
+        </span>
+      </button>
     </div>
   </header>
 
@@ -33,34 +43,123 @@
     <h2 class="sr-only">패션의류/잡화</h2>
     <div class="navigation__inner">
       <!-- 카테고리별 내비게이션(메뉴) 영역 -->
-      <ul>
-        <li class="icon-clothes"><a href="/" aria-roledescription="button">패션의류/잡화</a></li>
-        <li class="icon-beauty">뷰티</li>
-        <li class="icon-baby">출산유아동</li>
-        <li class="icon-foods">식품</li>
-        <li class="icon-kitchenware">주방용품</li>
-        <li class="icon-houseware">생활용품</li>
-        <li class="icon-interior">홈인테리어</li>
-        <li class="icon-appliances">가전디지털</li>
-        <li class="icon-sports">스포츠</li>
-        <li class="icon-car">자동차용품</li>
-        <li class="icon-book">도서음반</li>
-        <li class="icon-toy">완구취미</li>
-        <li class="icon-stationery">문구오피스</li>
-        <li class="icon-pet">반려동물</li>
-        <li class="icon-travel">여행티켓</li>
-        <li class="icon-theme">테마관</li>
+      <ul class="navigation__list first-depth">
+        <li>
+          <a class="icon-clothes" aria-roledescription="button">
+            패션의류/잡화
+          </a>
+          <ul class="navigation__list second-depth">
+            <li>
+              <a aria-roledescription="button">
+                여성패션
+              </a>
+              <ul class="navigation__list third-depth">
+                <li>
+                  <a href="/" aria-roledescription="button">
+                    의류
+                  </a>
+                </li>
+                <li>
+                  <a href="/" aria-roledescription="button">
+                    속옷/잠옷
+                </li>
+                <li>
+                  <a href="/" aria-roledescription="button">
+                    신발
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a aria-roledescription="button">
+                남성패션
+              </a>
+            </li>
+            <li>
+              <a aria-roledescription="button">
+                유아동패션
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-beauty">뷰티</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-baby">출산유아동</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-foods">식품</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-kitchenware">주방용품</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-houseware">생활용품</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-interior">홈인테리어</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-appliances">가전디지털</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-sports">스포츠</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-car">자동차용품</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-book">도서음반</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-toy">완구취미</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-stationery">문구오피스</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-pet">반려동물</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-travel">여행티켓</span>
+          </a>
+        </li>
+        <li>
+          <a aria-roledescription="button">
+            <span class="icon-theme">테마관</span>
+          </a>
+        </li>
       </ul>
-      <ul>
-        <li><a href="/" aria-roledescription="button">여성패션</a></li>
-        <li>남성패션</li>
-        <li>유아동패션</li>
-      </ul>
-      <ul>
-        <li>의류</li>
-        <li>속옷/잠옷</li>
-        <li>신발</li>
-      </ul>
+
+
     </div>
   </nav>
 

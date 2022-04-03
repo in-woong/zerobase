@@ -1,13 +1,116 @@
 /* ---------------------------------------------- */
 /* 헤더                                            */
 /* ---------------------------------------------- */
+.header .header__inner .button--category {
+  margin-left: 450px;
+  position: relative;
+  width: 110px;
+  height: 116px;
+  background-color: var(--color-blue-600);
+  color: var(--color-white);
 
+  border: none;
+}
+.header .header__inner .button--category .category-icon {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+.header .header__inner .button--category .category-text {
+  position: absolute;
+  top: 72px;
+  left: 32px;
+  font-size: 12px;
+}
 /* ---------------------------------------------- */
 /* 내비게이션                                        */
 /* ---------------------------------------------- */
+
 .navigation {
-  display: none;
+  margin-left: 450px;
+  visibility: hidden;
 }
+.navigation__inner {
+  position: relative;
+  width: 540px;
+  height: 500px;
+}
+.navigation .navigation__inner .navigation__list {
+  height: 500px;
+  width: 180px;
+  padding: 10px 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navigation .navigation__inner .first-depth {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.navigation .navigation__inner .second-depth {
+  position: absolute;
+  top: -10px;
+  left: 175px;
+}
+.second-depth {
+  visibility: hidden;
+}
+.second-depth li span {
+  display: inline-block;
+  width: 100%;
+}
+
+.navigation .navigation__inner .third-depth {
+  position: absolute;
+  top: -10px;
+  left: 175px;
+}
+.third-depth {
+  visibility: hidden;
+}
+.navigation .navigation__inner .navigation__list li {
+  position: relative;
+  width: 170px;
+  height: 30px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+.navigation .navigation__inner .navigation__list li span::before {
+  margin-right: 5px;
+}
+
+nav[class*='is--active'] {
+  visibility: visible;
+}
+
+a[class*='is--active'] {
+  color: var(--color-blue-600);
+  font-weight: 700;
+}
+a[class*='is--active']::after {
+  position: absolute;
+  top: 30%;
+  right: 0px;
+  content: ' ';
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--color-blue-600); /* 화살표 */
+}
+
+ul[class*='is--active'] {
+  visibility: visible;
+}
+
 /* ---------------------------------------------- */
 /* 메인 콘텐츠                                       */
 /* ---------------------------------------------- */
