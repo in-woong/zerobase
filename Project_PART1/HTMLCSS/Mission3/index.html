@@ -11,12 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="/stylesheets/main.css" />
+  <link rel="stylesheet" href="./stylesheets/main.css" />
 </head>
 
 <body>
+  <h1 class="sr-only">Project</h1>
   <header>
-    <h1>
+    <section>
+      <h2 class="sr-only">Counpang</h2>
       <a href="https://www.coupang.com">
         <svg width="246" height="56" viewBox="0 0 246 56" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_18_89)">
@@ -49,24 +51,25 @@
           </defs>
         </svg>
       </a>
-    </h1>
+    </section>
   </header>
   <section class="category">
     <h2 class="category_headline">
-      <p class="pTag">HOT! TREND</p>
+      <span class="pTag">HOT! TREND</span>
       <span class="headline">카테고리별
-        <p class="fontBlue">추천 광고상품</p>
+        <span class="fontBlue">추천 광고상품</span>
       </span>
 
     </h2>
     <article class="category_products">
+      <h3 class="sr-only">생활용품</h3>
       <section class="nameTag">
-        <h3 class="title">
+        <h4 class="title">
           <span class="title_main">생활용품</span>
           <a href="/">
             <span class="title_desc">바로가기</span>
           </a>
-        </h3>
+        </h4>
         <div class="hotkeywords">
           <span class="hotkeywords_title">HOT 키워드</span>
           <ul>
@@ -80,6 +83,7 @@
         </div>
       </section>
       <section class="slideBanner">
+        <h4 class="sr-only">SlideBanner</h4>
         <img src="./assets/slides/houseware-downy.jpg" alt="downy">
         <div class="slideBanner_desc">
           <span class="slideBanner_desc_main">최초 99.9% 향균</span>
@@ -91,6 +95,7 @@
         </div>
       </section>
       <section class="productCards">
+        <h4 class="sr-only">Product Cards</h4>
         <div class="productCards_section">
           <div class="productCard">
             <a href="/">
@@ -98,7 +103,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">왕타 칫솔 바스켓 앤 커버 10p+ 걸이 5p+ 바구니</span>
-              <span class="productCard_price">12,900 <p class="price_won">원</p></span>
+              <span class="productCard_price">12,900 <span class="price_won">원</span></span>
             </div>
           </div>
           <div class="productCard">
@@ -107,7 +112,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">로엘알파리 엑스트라 오디네리 헤어오일 엑스트라 리치</span>
-              <span class="productCard_price">10,020 <p class="price_won">원</p></span>
+              <span class="productCard_price">10,020 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
@@ -118,7 +123,7 @@
             <div class="productCard_desc">
               <span class="productCard_title">데일리워터 물걸레 청소포 대형리필 30매, 10팩</span>
               <span class="productCard_sale">즉시 할인가</span>
-              <span class="productCard_price">15,410 <p class="price_won">원</p></span>
+              <span class="productCard_price">15,410 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
@@ -134,7 +139,7 @@
             <div class="productCard_desc">
               <span class="productCard_title">트로비스 핸드형 마사지 스텍, 1개, 블루</span>
               <span class="productCard_sale">로켓와우회원가</span>
-              <span class="productCard_price">5,740 <p class="price_won">원</p></span>
+              <span class="productCard_price">5,740 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
@@ -144,7 +149,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">모던홈 탱크건조대 2단 특대, 1개</span>
-              <span class="productCard_price">28550 <p class="price_won">원</p></span>
+              <span class="productCard_price">28550 <span class="price_won">원</span></span>
             </div>
           </div>
           <div class="productCard">
@@ -154,7 +159,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">웹킵스 황사방역마스크 KF94, 초소형 1개입 25개</span>
-              <span class="productCard_price">5,740 <p class="price_won">원</p></span>
+              <span class="productCard_price">5,740 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
@@ -164,13 +169,14 @@
 
     </article>
     <article class="category_products border_color_green">
+      <h3 class="sr-only">주방용품</h3>
       <section class="nameTag">
-        <h3 class="title">
+        <h4 class="title">
           <span class="title_main color_green">주방용품</span>
           <a href="/">
             <span class="title_desc">바로가기</span>
           </a>
-        </h3>
+        </h4>
         <div class="hotkeywords">
           <span class="hotkeywords_title">HOT 키워드</span>
           <ul>
@@ -184,6 +190,7 @@
         </div>
       </section>
       <section class="slideBanner">
+        <h4 class="sr-only">Slide Banner</h4>
         <img src="./assets/slides/kitchenware-tumbler.jpg" alt="downy">
         <div class="slideBanner_desc bg-color_green">
           <span class="slideBanner_desc_main">텀블러</span>
@@ -195,6 +202,7 @@
         </div>
       </section>
       <section class="productCards">
+        <h4 class="sr-only">Product Cards</h4>
         <div class="productCards_section">
           <div class="productCard">
             <a href="/">
@@ -202,7 +210,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">왕타 칫솔 바스켓 앤 커버 10p+ 걸이 5p+ 바구니</span>
-              <span class="productCard_price">12,900 <p class="price_won">원</p></span>
+              <span class="productCard_price">12,900 <span class="price_won">원</span></span>
             </div>
           </div>
           <div class="productCard">
@@ -211,7 +219,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">로엘알파리 엑스트라 오디네리 헤어오일 엑스트라 리치</span>
-              <span class="productCard_price">10,020 <p class="price_won">원</p></span>
+              <span class="productCard_price">10,020 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
@@ -222,7 +230,7 @@
             <div class="productCard_desc">
               <span class="productCard_title">데일리워터 물걸레 청소포 대형리필 30매, 10팩</span>
               <span class="productCard_sale">즉시 할인가</span>
-              <span class="productCard_price">15,410 <p class="price_won">원</p></span>
+              <span class="productCard_price">15,410 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
@@ -238,7 +246,7 @@
             <div class="productCard_desc">
               <span class="productCard_title">트로비스 핸드형 마사지 스텍, 1개, 블루</span>
               <span class="productCard_sale">로켓와우회원가</span>
-              <span class="productCard_price">5,740 <p class="price_won">원</p></span>
+              <span class="productCard_price">5,740 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
@@ -248,7 +256,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">모던홈 탱크건조대 2단 특대, 1개</span>
-              <span class="productCard_price">28550 <p class="price_won">원</p></span>
+              <span class="productCard_price">28550 <span class="price_won">원</span></span>
             </div>
           </div>
           <div class="productCard">
@@ -258,7 +266,7 @@
             </a>
             <div class="productCard_desc">
               <span class="productCard_title">웹킵스 황사방역마스크 KF94, 초소형 1개입 25개</span>
-              <span class="productCard_price">5,740 <p class="price_won">원</p></span>
+              <span class="productCard_price">5,740 <span class="price_won">원</span></span>
               <img class="productCard_rocket" src="./assets/icon/badge-rocket.svg" alt="로켓배송">
             </div>
           </div>
