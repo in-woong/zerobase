@@ -34,11 +34,19 @@ span:nth-child(3) {
   width: 1020px;
 }
 .cardLink {
+  display: block;
   position: relative;
   height: 310px;
   border: 1px solid #c4c4c4;
   padding: 20px;
 }
+/* .cardLink:nth-child(1) {
+  float: inline-start;
+}
+.cardLink:nth-child(2) {
+  float: right;
+} */
+
 .hyperlink {
   position: absolute;
   border-style: none;
