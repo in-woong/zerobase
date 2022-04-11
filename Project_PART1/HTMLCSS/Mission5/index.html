@@ -36,7 +36,6 @@
       </button>
     </div>
   </header>
-
   <nav class="navigation">
     <!-- 내비게이션 영역 -->
     <!-- 내비게이션 제목 -->
@@ -62,6 +61,7 @@
                 <li>
                   <a href="/" aria-roledescription="button">
                     속옷/잠옷
+                  </a>
                 </li>
                 <li>
                   <a href="/" aria-roledescription="button">
@@ -173,25 +173,25 @@
     <!-- 푸터 관련 콘텐츠는 .footer 영역 안에 마크업 해주세요. -->
     <div class="customerGuide">
       <span class="customerGuide-name">인재채용</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">입점/제휴문의</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">공지사항</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">고객의 소리</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">개인정보 처리방침</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">쿠팡페이 이용약관</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">쿠팡페이 개인정보 처리방침</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">신뢰관리센터</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">제휴마케팅</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
       <span class="customerGuide-name">광고안내</span>
-      <span class="divider">|</span>
+      <span aria-hidden="true" class="divider">|</span>
     </div>
     <div class="coupangInfo">
       <span class="logo">Coupang</span>
@@ -207,9 +207,15 @@
           <span class="desc-name">365고객센터</span>
           <span class="desc-desc">전자금융거래분쟁처리담당</span>
         </span>
-        <span class="phoneNumber">1577-7011</span>
+        <span class="phoneNumber">
+          <a href="tel:1577-7011">1577-7011</a>
+        </span>
         <span>서울시 송파구 송파대로 570</span>
-        <span class="email">email : help@coupang.com</span>
+        <span class="email">
+          <a href="mailto:help@coupang.com?subject=문의사항">
+            email : help@coupang.com
+          </a>
+        </span>
       </div>
       <div class="payment">
         <span>우리은행 채무지급보증 안내</span>
@@ -226,12 +232,12 @@
         <span class="copyright-desc">Copyright ⓒ Coupang Corp. 2010-2020 All Right Reserved.</span>
       </div>
       <div class="SNS">
-        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><img class="SNS-facebook SNS-icon"
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer noopener"><img class="SNS-facebook SNS-icon"
             src="./assets/icon/sns-facebook.svg" alt="facebook"></a>
-        <a href="https://section.blog.naver.com/" target="_blank" rel="noreferrer"><img class="SNS-naverBlog SNS-icon"
-            src="./assets/icon/sns-naver-blog.svg" alt="naver-blog"></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><img class="SNS-instagram SNS-icon"
-            src="./assets/icon/sns-instagram.svg" alt="instagram"></a>
+        <a href="https://section.blog.naver.com/" target="_blank" rel="noreferrer noopener"><img
+            class="SNS-naverBlog SNS-icon" src="./assets/icon/sns-naver-blog.svg" alt="naver-blog"></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener"><img
+            class="SNS-instagram SNS-icon" src="./assets/icon/sns-instagram.svg" alt="instagram"></a>
       </div>
     </div>
 
