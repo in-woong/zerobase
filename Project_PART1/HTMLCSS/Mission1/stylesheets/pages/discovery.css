@@ -1,4 +1,8 @@
 /* CSS 작성 */
+body {
+  max-width: 1020px;
+  margin: 0 auto;
+}
 header {
   margin-top: 100px;
   margin-bottom: 48px;
@@ -49,6 +53,10 @@ span:nth-child(3) {
   left: 20px;
   z-index: 1;
   transition: all 0.05s ease-in;
+}
+.hyperlink > a {
+  width: 100%;
+  height: 100vh;
 }
 .hyperlink::after {
   color: #f3f3f3;
