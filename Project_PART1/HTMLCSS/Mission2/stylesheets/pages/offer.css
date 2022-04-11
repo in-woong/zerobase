@@ -2,6 +2,7 @@
 body {
   padding: 0px 145px;
   color: var(--color-back);
+  box-sizing: border-box;
 }
 .header {
   width: 100%;
@@ -17,7 +18,10 @@ body {
   width: 176px;
   height: 40px;
 }
-
+.headerLogo > img {
+  width: 176px;
+  height: 40px;
+}
 .offerHeadLine {
   font-weight: 500;
   font-size: 24px;
