@@ -1,4 +1,9 @@
 /* 카테고리별 추천 광고상품 */
+body {
+  max-width: 1020px;
+  margin: 0px auto;
+}
+
 .h3 {
   margin: 0px;
 }
@@ -16,13 +21,11 @@ li {
 header {
   margin-top: 100px;
   margin-bottom: 48px;
-  margin-left: 139px;
 }
 .category {
   display: flex;
   flex-direction: column;
   width: 1020px;
-  margin: 0px 130px;
 }
 .category_headline {
   margin: 0px;
@@ -153,12 +156,17 @@ header {
   padding: 9px 16px;
 }
 .productCards_section {
+  position: relative;
   display: flex;
 }
-.productCards_bar {
-  width: 100%;
-  height: 0.5px;
-  z-index: 2;
+.productCards_bar_before::before {
+  position: absolute;
+  top: -83%;
+  left: 50%;
+  transform: rotate(90deg);
+  content: ' ';
+  width: 1px;
+  height: 160%;
   background-color: #aaa9a9;
 }
 .productCard {
