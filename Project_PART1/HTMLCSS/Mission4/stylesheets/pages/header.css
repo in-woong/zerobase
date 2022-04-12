@@ -301,11 +301,12 @@ li {
   align-items: center;
 }
 .typeNavi-item {
-  display: flex;
+  display: inline-block;
   align-items: center;
 }
-.typeNavi-item > img {
+.type .typeNavi-item > img {
   width: 14px;
   height: 14px;
   margin: 0px 3px;
+  vertical-align: middle;
 }
