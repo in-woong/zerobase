@@ -36,6 +36,10 @@
   width: 540px;
   height: 500px;
 }
+/* .navigation__list li > a {
+  width: 100%;
+  height: 100%;
+} */
 .navigation .navigation__inner .navigation__list {
   height: 500px;
   width: 180px;
@@ -48,6 +52,10 @@
   top: 0;
   left: 0;
 }
+.first-depth li a {
+  display: inline-block;
+  width: 100%;
+}
 .navigation .navigation__inner .second-depth {
   position: absolute;
   top: -10px;
@@ -56,7 +64,7 @@
 .second-depth {
   visibility: hidden;
 }
-.second-depth li span {
+.second-depth li a {
   display: inline-block;
   width: 100%;
 }
