@@ -2,31 +2,28 @@
 const $nav = document.querySelector('nav');
 const $toggleBtn = document.querySelector('.toggle');
 const $body = document.querySelector('body');
-let toggle = sessionStorage.getItem('toggle');
-console.log(sessionStorage.getItem('toggle'));
 
+const isOpen = localStorage.getItem('sideOpen');
+if (isOpen == 'false') {
+  $nav.classList.remove('active');
+}
 $toggleBtn.addEventListener('click', (e) => toggleClick(e));
 
 const toggleClick = (e) => {
-  if (toggle) {
-    $nav.classList.add('active');
-    toggle = false;
-    sessionStorage.setItem('toggle', false);
-  } else {
+  const isOpen = localStorage.getItem('sideOpen');
+
+  if (isOpen == 'true') {
     $nav.classList.remove('active');
-    toggle = true;
-    sessionStorage.setItem('toggle', true);
+    localStorage.setItem('sideOpen', false);
+  } else {
+    $nav.classList.add('active');
+    localStorage.setItem('sideOpen', true);
   }
 };
 
-const loaded = () => {
-  $body.classList.remove('preload');
-  $body.style.visibility = 'visible';
-};
+const openToggle = () => {};
 
-const init = () => {
-  window.addEventListener('DOMContentLoaded',  () => {
-    loaded();
-  });
+window.onload = () => {
+  $body.style.visibility = 'visible';
+  $body.classList.remove('preload');
 };
-init();
