@@ -15,10 +15,9 @@ $containers.forEach(($container, i) => {
 });
 const init = () => {
   const $link = document.createElement('link');
-  const $script = document.querySelector('script');
   $link.setAttribute('href', 'star-rating/theme.css');
   $link.setAttribute('rel', 'stylesheet');
-  document.head.insertBefore($link, $script);
+  document.head.insertAdjacentElement('beforebegin', $link);
 };
 
 init();
