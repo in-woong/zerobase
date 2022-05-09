@@ -1,0 +1,120 @@
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+  margin: 0px;
+}
+
+.input {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid black;
+  width: 100px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.calendar-form {
+  visibility: hidden;
+  width: fit-content;
+  height: fit-content;
+
+  margin-top: 10px;
+  padding-bottom: 5px;
+
+  border-radius: 10px;
+
+  -webkit-box-shadow: 15px 20px 36px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 15px 20px 36px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 15px 20px 36px 2px rgba(0, 0, 0, 0.75);
+}
+.active {
+  visibility: visible;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #44c279;
+  color: white;
+
+  padding: 20px 10px;
+  width: 300px;
+
+  border-radius: 10px 10px 0px 0px;
+}
+
+.navBtn {
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+.navSpan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(7, 35px);
+  justify-content: center;
+  align-items: center;
+}
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: gray;
+
+  text-align: center;
+  height: 37px;
+}
+.elseMonth {
+  color: gray;
+  opacity: 0.5;
+}
+
+.sunday {
+  color: red;
+}
+.saturday {
+  color: blue;
+}
+.today {
+  border: 1px solid #44c279;
+  border-radius: 100%;
+  background-color: transparent;
+}
+.date {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  height: 37px;
+}
+.date:hover {
+  background-color: #44c279;
+  color: white;
+  border-radius: 100%;
+}
+.selected {
+  background-color: #44c279;
+  color: white;
+  border-radius: 100%;
+}
+
+@media (max-width: 300px) {
+  .calendar-form {
+    font-size: 10px;
+  }
+}
