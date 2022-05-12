@@ -1,1 +1,119 @@
 /* CSS 작성 */
+
+/*헤더 */
+.header {
+  /* background-color: red; */
+  width: 102rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.brand {
+  margin-top: 10rem;
+  margin-bottom: 4.8rem;
+}
+.brand__link {
+  display: block;
+  width: 17.6rem;
+}
+
+.brand__image {
+  max-width: 100%;
+  height: auto;
+}
+
+/*섹션*/
+.discovery {
+  /* background-color: yellow; */
+  width: 103.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10rem;
+}
+
+/*섹션 헤드라인*/
+.discovery__headline {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0 0.8rem;
+}
+
+.discovery__title,
+.discovery__subtitle {
+  margin: 0;
+  font-weight: 500;
+}
+
+.discovery__title {
+  font-size: 2.4rem;
+}
+
+.discovery__headline .divider {
+  color: var(--color-gray-600);
+  margin: 0 1rem;
+}
+
+.discovery__subtitle {
+  font-size: 1.6rem;
+  color: var(--color-gray-600);
+}
+/*섹션 상품카드 링크 */
+
+.discovery__list {
+  list-style: none;
+  padding-left: 0;
+  /* background-color: yellow; */
+  overflow: hidden;
+  margin: 0.8rem 0 0 0;
+}
+
+.discovery__item {
+  float: left;
+  margin: 1.6rem 0.8rem 0;
+}
+
+.discovery__link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-gray-500);
+  height: 31rem;
+  position: relative;
+}
+
+.cardLink--large {
+  width: 50.2rem;
+}
+
+.cardLink--small {
+  width: 24.3rem;
+}
+
+.discovery__button {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  background: var(--color-gray-500)
+    url('./../../assets/icon/angle-right-square.svg') no-repeat 100% 50%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+
+  transition: background 0.4s;
+}
+
+.discovery__link:hover .discovery__button,
+.discovery__link:focus .discovery__button {
+  background-color: var(--color-blue-600);
+  width: auto;
+  padding: 1.2rem 4rem 1.2rem 2rem;
+  color: var(--color-white);
+}
+
+.discovery__link:hover .discovery__button::before,
+.discovery__link:focus .discovery__button::before {
+  content: attr(aria-label);
+}
