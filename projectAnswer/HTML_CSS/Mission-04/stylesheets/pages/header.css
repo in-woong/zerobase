@@ -37,7 +37,6 @@
 /* 헤더 inner */
 
 .header__inner {
-  background: pink;
   width: 102rem;
   margin-left: auto;
   margin-right: auto;
@@ -90,6 +89,93 @@
 /* 검색 폼 */
 .searchForm {
   grid-area: searchForm;
+  align-self: end;
+}
+
+.searchForm fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.searchForm__wrapper {
+  height: 4rem;
+  border: 2px solid var(--color-blue-600);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.formSelect {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 100%;
+}
+
+.formSelect__select {
+  appearance: none;
+  border: 0;
+  width: 13.5rem;
+  height: 100%;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--color-gray-700);
+  padding-left: 1.2rem;
+}
+
+.formSelect .iconDown {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY((-50%));
+  pointer-events: none;
+}
+
+.formInput {
+  background-color: pink;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.formInput__input {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.3rem 1rem;
+}
+
+.formInput__input::placeholder {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--color-gray-700);
+}
+
+.button--search,
+.button--voiceSearch {
+  border: 0;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+.button--search {
+  border: 0;
+  padding: 0;
+  order: 1;
+  width: 3rem;
+  height: 3rem;
+  background: url('../../assets/icon/search.svg');
+}
+
+.button--voiceSearch {
+  border: 0;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  background: url('../../assets/icon/mic.svg');
 }
 /* 마이쿠팡 영역 */
 .myCoupang {
