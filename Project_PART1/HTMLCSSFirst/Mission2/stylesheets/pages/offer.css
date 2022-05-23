@@ -1,0 +1,108 @@
+/* 오늘의 쇼핑 제안 */
+body {
+  padding: 0px 145px;
+  color: var(--color-back);
+}
+.header {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 48px;
+  margin-left: 2px;
+}
+.header > a {
+  display: block;
+  width: 100%;
+}
+.headerLogo {
+  width: 176px;
+  height: 40px;
+}
+
+.offerHeadLine {
+  font-weight: 500;
+  font-size: 24px;
+  background-image: url('../../assets/icon/shopping.svg');
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  height: 30px;
+  margin: 0px;
+  margin-bottom: 24px;
+}
+
+.cardList {
+  display: flex;
+
+  margin: 0px;
+  padding: 0px;
+
+  width: 1020px;
+  height: 270px;
+}
+.cardItem {
+  list-style: none;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-white);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.saleCard {
+  position: absolute;
+  background-color: var(--color-red-500);
+  width: 53px;
+  height: 30px;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardImg {
+  width: 160px;
+  height: 160px;
+  padding: 0px 6px;
+}
+.cardDesc {
+  margin-top: 12px;
+  margin-bottom: 3px;
+}
+
+.itemTitle {
+  color: var(--color-back);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  width: 172px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+
+  margin: 0px;
+  margin-bottom: 12px;
+}
+.delivery {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: var(--color-gray-700);
+  font-size: 14px;
+}
+
+.reviewScore {
+  display: inline-block;
+  width: 68px;
+  height: 12px;
+  background-image: url('../../assets/sprites/rating-stars.png');
+}
+
+.reviewNumber {
+  color: var(--color-gray-700);
+  font-size: 14px;
+  font-weight: 400;
+}
+.scoreFour {
+  background-position: 100% 80%;
+}

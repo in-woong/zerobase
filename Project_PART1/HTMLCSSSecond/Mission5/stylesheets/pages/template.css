@@ -1,0 +1,280 @@
+/* ---------------------------------------------- */
+/* 헤더                                            */
+/* ---------------------------------------------- */
+
+.header .header__inner .button--category {
+  margin-left: 450px;
+  position: relative;
+  width: 110px;
+  height: 116px;
+  background-color: var(--color-blue-600);
+  color: var(--color-white);
+
+  border: none;
+}
+.header .header__inner .button--category .category-icon {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+.header .header__inner .button--category .category-text {
+  position: absolute;
+  top: 72px;
+  left: 32px;
+  font-size: 12px;
+}
+/* ---------------------------------------------- */
+/* 내비게이션                                        */
+/* ---------------------------------------------- */
+
+.navigation {
+  margin-left: 450px;
+  visibility: hidden;
+}
+.navigation__inner {
+  position: relative;
+  width: 540px;
+  height: 500px;
+}
+/* .navigation__list li > a {
+  width: 100%;
+  height: 100%;
+} */
+.navigation .navigation__inner .navigation__list {
+  height: 500px;
+  width: 180px;
+  padding: 10px 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navigation .navigation__inner .first-depth {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.first-depth li a {
+  display: inline-block;
+  width: 100%;
+}
+.navigation .navigation__inner .second-depth {
+  position: absolute;
+  top: -10px;
+  left: 175px;
+}
+.second-depth {
+  visibility: hidden;
+}
+.second-depth li a {
+  display: inline-block;
+  width: 100%;
+}
+
+.navigation .navigation__inner .third-depth {
+  position: absolute;
+  top: -10px;
+  left: 175px;
+}
+.third-depth {
+  visibility: hidden;
+}
+.navigation .navigation__inner .navigation__list li {
+  position: relative;
+  width: 170px;
+  height: 30px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+.navigation .navigation__inner .navigation__list li span::before {
+  margin-right: 5px;
+}
+
+nav[class*='is--active'] {
+  visibility: visible;
+}
+
+a[class*='is--active'] {
+  color: var(--color-blue-600);
+  font-weight: 700;
+}
+a[class*='is--active']::after {
+  position: absolute;
+  top: 30%;
+  right: 0px;
+  content: ' ';
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--color-blue-600); /* 화살표 */
+}
+
+ul[class*='is--active'] {
+  visibility: visible;
+}
+
+/* ---------------------------------------------- */
+/* 메인 콘텐츠                                       */
+/* ---------------------------------------------- */
+/* 메인 콘텐츠 영역의 최소 높이 설정 */
+.main {
+  min-height: 52rem;
+}
+
+/* ---------------------------------------------- */
+/* 푸터                                            */
+/* ---------------------------------------------- */
+.footer .customerGuide {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-800);
+  font-size: 14px;
+}
+.footer .customerGuide .customerGuide-name {
+  min-width: fit-content;
+  padding: 0px 14px;
+}
+.footer .coupangInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 1200px;
+  height: 143px;
+  margin: 32px auto;
+
+  color: var(--color-gray-800);
+  font-size: 16px;
+}
+.footer .coupangInfo .logo {
+  display: block;
+  width: 176px;
+  height: 40px;
+  color: transparent;
+  background-image: url('../../assets/logo/logo-mono.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.footer .coupangInfo .infoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+}
+.footer .coupangInfo .customerCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+}
+
+.footer .coupangInfo .customerCenter .desc .desc-name {
+  display: inline-block;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  padding-right: 13px;
+  border-right: 1px solid var(--color-gray-800);
+}
+.footer .coupangInfo .customerCenter .desc .desc-desc {
+  display: inline-block;
+
+  padding-left: 13px;
+}
+.footer .coupangInfo .customerCenter .phoneNumber {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+.footer .coupangInfo .payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 100%;
+}
+.footer .coupangInfo .payment > span:nth-child(1) {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+.footer .coupangInfo .payment > span:nth-child(2) {
+  display: block;
+  width: 282px;
+}
+
+.footer .copyrightSNS {
+  width: 100%;
+  height: 102px;
+  font-size: 12px;
+  font-weight: 300;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  padding: 16px 0px;
+
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-200);
+}
+.footer .copyrightSNS .copyright {
+  display: flex;
+  flex-direction: column;
+}
+.footer .copyrightSNS .copyright .copyright-desc {
+  display: inline-block;
+}
+.footer .copyrightSNS .copyright {
+  margin-right: 50px;
+}
+.footer .copyrightSNS .SNS .SNS-icon {
+  margin-right: 10px;
+}
+.footer .copyrightSNS .SNS .SNS-instagram {
+  margin-right: 0px;
+  border-radius: 50%;
+  background: radial-gradient(
+      circle farthest-corner at 35% 90%,
+      #fec564,
+      transparent 50%
+    ),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 20% -50%,
+      #5258cf,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 60% -20%,
+      #893dc2,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    linear-gradient(
+      #6559ca,
+      #bc318f 30%,
+      #e33f5f 50%,
+      #f77638 70%,
+      #fec66d 100%
+    );
+}
