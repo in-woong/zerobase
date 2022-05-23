@@ -1,0 +1,99 @@
+/* CSS 작성 */
+body {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+header {
+  margin-top: 100px;
+  margin-bottom: 48px;
+}
+h2 {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+h2 > span:nth-child(1) {
+  font-size: 24px;
+  font-weight: 500;
+}
+h2 > span:nth-child(2) {
+  margin: 0px 10px;
+}
+h2 > span:nth-child(2),
+span:nth-child(3) {
+  font-size: 16px;
+  color: #aaa9a9;
+}
+.discoveryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  height: 958px;
+  width: 1020px;
+}
+.cardLink {
+  display: block;
+  position: relative;
+  height: 310px;
+  border: 1px solid #c4c4c4;
+  padding: 20px;
+}
+/* .cardLink:nth-child(1) {
+  float: inline-start;
+}
+.cardLink:nth-child(2) {
+  float: right;
+} */
+
+.hyperlink {
+  position: absolute;
+  border-style: none;
+  background-color: #00000033;
+  opacity: 20%;
+  color: #f3f3f3;
+  height: 42px;
+  padding: 0px 20px;
+
+  text-decoration-line: none;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  transition: all 0.05s ease-in;
+}
+.hyperlink > a {
+  width: 100%;
+  height: 100vh;
+}
+.hyperlink::after {
+  color: #f3f3f3;
+  content: '>';
+  position: absolute;
+  font-size: 11px;
+  width: 6px;
+  height: 10px;
+  left: calc(50% -6px / 2);
+  top: calc(50% - 10px / 2);
+}
+.hyperlink:hover,
+.hyperlink:focus {
+  background-color: #0074e9;
+  opacity: 100%;
+}
+.hyperlink:hover:before,
+.hyperlink:focus:before {
+  width: 112px;
+  height: 42px;
+  content: '구매하기';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  margin-right: 16px;
+}
+.largeImg {
+  width: 502px;
+}
+.smallImge {
+  width: 243px;
+}
