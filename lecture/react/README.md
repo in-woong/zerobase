@@ -90,4 +90,7 @@ const element = React.createElement(componenet, props, ...children);
 - bundler
 - 분리된 Javascript와 CSS 모듈 코드를 브라우저에 최적화된 여러개의 파일로 결함합니다. React 어플리케이션에서 널리 사용되는 번들러에는 Webpack과 Browserify가 있다.
 
--[공식문서](https://webpack.js.org/)
+- [공식문서](https://webpack.js.org/)
+
+- Hot Module Replacement (새로고침 필요 없음)
+- [공식문서](https://webpack.kr/guides/hot-module-replacement)

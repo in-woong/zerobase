@@ -12,6 +12,10 @@ module.exports = {
     }),
   ],
   optimization: { minimizer: [] },
+  devServer: {
+    static: './dist',
+    hot: true,
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
