@@ -94,3 +94,7 @@ const element = React.createElement(componenet, props, ...children);
 
 - Hot Module Replacement (새로고침 필요 없음)
 - [공식문서](https://webpack.kr/guides/hot-module-replacement)
+
+## JSX
+
+- [공식문서](https://ko.reactjs.org/docs/introducing-jsx.html)
