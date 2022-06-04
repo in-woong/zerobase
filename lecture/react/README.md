@@ -59,7 +59,35 @@ const element = React.createElement(componenet, props, ...children);
 - component가 감싸고 있는 내부 컴포넌트
 - 텍스트, 리액트 컴포넌트
 
-
 ### ReactDOM.render()함수
 
 - [공식문서](https://ko.reactjs.org/docs/rendering-elements.html)
+
+## CRA
+
+- [공식문서](http://ko.reactjs.org/docs/getting-strated.html)
+
+## CRA 없이 React 구성하기
+
+### Babel
+
+- compiler
+
+- 예시 목표 : Babel이 JSX-> Javascript로 트랜스파일링 해주는 것을 직접 확인해 보자.
+- babel config 확인
+
+```javascript
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12"
+```
+
+- [공식문서](https://babeljs.io/docs/en/index.html)
+
+### Webpack
+
+- bundler
+- 분리된 Javascript와 CSS 모듈 코드를 브라우저에 최적화된 여러개의 파일로 결함합니다. React 어플리케이션에서 널리 사용되는 번들러에는 Webpack과 Browserify가 있다.
+
+-[공식문서](https://webpack.js.org/)
