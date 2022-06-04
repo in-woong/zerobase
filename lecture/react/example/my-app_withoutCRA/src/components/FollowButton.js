@@ -1,5 +1,6 @@
 // React Component!
 // Follow <-> following
+import React from 'react';
 export default function FollowButton() {
   const [following, setFollowing] = React.useState(false);
   const commonBtnStyle = {
@@ -30,7 +31,7 @@ export default function FollowButton() {
 
   return (
     <div
-      onCLick={() => setFollowing(!following)}
+      onClick={() => setFollowing(!following)}
       style={following ? followingBtnStyle : followBtnStyle}
     >
       {following ? 'following' : 'Follow'}
