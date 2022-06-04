@@ -25,3 +25,41 @@
 - 라우팅, 전역상태관리, API호출, 빌드시스템
 
 - library : 사용자가 이미 만들어져 있는 것들 중 선택해서 시스템을 구축한다.
+
+## 웹사이트에 React 추가
+
+- [공식사이트](http://ko.reactjs.org/docs/add-react-to-a-website.html)
+
+- [깃헙 링크](http://github.com/zerobase-school/2022-frontend-school-react/tree/master/2/2-1)
+
+- [작성예시]()
+
+1. HTML파일에 DOM 컨테이너 설치
+2. sciprt 태그 추가하기
+3. 컨테이너 박스 추가하기
+
+### React.createElement()함수
+
+- react Element를 반환
+
+```javascript
+const element = React.createElement(componenet, props, ...children);
+```
+
+#### Component
+
+- 문자열일 때는 HTML태그를 의미 ("div")
+
+#### Props
+
+- componenet가 가질수 있는 옵션
+
+#### Children
+
+- component가 감싸고 있는 내부 컴포넌트
+- 텍스트, 리액트 컴포넌트
+
+
+### ReactDOM.render()함수
+
+- [공식문서](https://ko.reactjs.org/docs/rendering-elements.html)
