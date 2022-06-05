@@ -155,3 +155,43 @@ const element = React.createElement(componenet, props, ...children);
 
 - 단일 진실 공급원 (Single source of truth), state 끌어 올리기
 - [예시](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/4/4-2/4-2-4)
+
+## Life-cycle
+
+|                           함수 컴포넌트                           | vs  |               클래스 컴포넌트                |
+| :---------------------------------------------------------------: | :-: | :------------------------------------------: |
+|                        비교적 최근에 나옴                         |     |              리액트 초기에 나옴              |
+| hook()함수로 컴포넌트의 mount, unmount 되는 시점에 제어할 수 있음 |     | 생명주기에 따른 메서드에 따라 제어할 수 있음 |
+
+## Hook
+
+- [공식문서](https://ko.reactjs.org/docs/hooks-intro.html)
+
+- useEffect()
+- componenetDidMount / componenetDidMount + componenetDidUpdate
+- componenetWillUnMount => return 으로 함수를 주면, unMount될 때 실행 된다.
+
+- [공식문서](https://ko.reactjs.org/docs/hooks-effect.html)
+
+## 중간미션s
+
+1. 데이터 초기화
+   > 명함 리스트는 데이터 베이스에 저장되어 있습니다. 우리는 아직 API를 호출하는 방법을 배우지 않았기 때문에, API를 호출할 필요는 없습니다. 다만 API를 호출한다고 가정하고, 전달 드리는 명함 리스트를 알맞은 위치에서 초기화 해주세요. 데이터는 아래 링크에 있습니다.
+
+[링크](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/5)
+
+2. 추첨하기 버튼과 명함 컴포넌트 구현
+> 추첨하기 버튼을 누르면, 1에서 초기화 한 명함 리스트 중 하나의 명함을 고릅니다. 추첨된 명함 정보를 명함 컴포넌트에 전달하는 방식으로 구현 합니다.
+
+- 상세조건 
+> 추첨하기 버튼을 눌렀을 때, 동일한 사람이 또 다시 추첨되면 안되기 때문에 당첨자는 응답 받은 배열에서 제거합니다.
+
+> 당첨자는 나중에 확인하기 위해, 별도의 데이터로 저장하고 있어야 합니다.
+
+- 참고사항
+> 명함 컴포넌트의 디자인은 없어도 괜찮습니다.
+> 명함 리스트가 초기화 되기 전까지, 명함 컴포넌트는 렌더링 되지 않습니다.
+> 추첨하기 버튼을 두(n)번째 눌렀을 때, 이전에 처음(n-1) 그렸던 명함은 사라지고 두번째 명함 정보만 렌더링 되면 됩니다.
+
+3. 추첨 완료 기능 구현
+> 추첨하기 버튼을 4번 째 누르면, "이미 3명의 추첨을 완료했습니다. 당첨자는 AAA, BBB, CCC 입니다."라는 windos.alert()을 띄운다.

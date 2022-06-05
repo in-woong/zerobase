@@ -16,9 +16,9 @@ export default function Counter() {
       <button
         onClick={() => {
           let result;
-          if (info.operator == '+') result = info.count + 1;
-          else if (info.operator == '*') result = info.count * 1;
-          else if (info.operator == '-') result = info.count - 1;
+          if (info.operator === '+') result = info.count + 1;
+          else if (info.operator === '*') result = info.count * 1;
+          else if (info.operator === '-') result = info.count - 1;
           setInfo({ ...info, count: result });
         }}
       >
