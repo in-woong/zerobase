@@ -95,6 +95,28 @@ const element = React.createElement(componenet, props, ...children);
 - Hot Module Replacement (새로고침 필요 없음)
 - [공식문서](https://webpack.kr/guides/hot-module-replacement)
 
-## JSX
+## JSX소개
 
 - [공식문서](https://ko.reactjs.org/docs/introducing-jsx.html)
+- JSX는 camelCase 프로퍼티 명령 규칙을 사용
+- class => className, for=>htmlfor
+
+## 조건부 렌더링
+
+- if-else 구문을 삼항연산자로 표현하여 사용!
+- if 구문은 논리 연산자로 사용!(&&) 하지만 false&& expression일 때 false는 반환이 된다는 것 주의!
+
+## Component와 Props
+
+- [공식문서](https://ko.reactjs.org/docs/components-and-props.html)
+
+- 모든 React 컴포넌트는 자신의 props를 다룰 때 반드시 순수 함수처럼 동작해야 합니다.
+
+### props.children
+
+```javascript
+<Welcome title={"Hello world!"}> -props.title
+ <welcome>"Hellow world!"</welcome> - props.children
+```
+
+1. 사용자 정의 컴포넌트가 일반적인 html구조의 구조와 비슷할 때 (예측할 수 있을 때)
