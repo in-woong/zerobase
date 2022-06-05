@@ -66,8 +66,7 @@
 
 > 단골 CS 네트워크 지식 문항
 >
-> 1. TCP의 3-way-handshake와 4-way-handshake의 방식의 차이점에 대해 간략히 설명해주세요
-> 2. TCP와 UDP의 차이점과 장단점에 대해서 설명해 주세요
+> s 1. TCP의 3-way-handshake와 4-way-handshake의 방식의 차이점에 대해 간략히 설명해주세요 2. TCP와 UDP의 차이점과 장단점에 대해서 설명해 주세요
 
 ### IP
 
@@ -80,3 +79,69 @@
 - DHCP(동적 호스트 구성 프로토콜), NAT, VLAN을 통해 주소 해결
 
 #### IPv6
+
+## TCP
+
+### TCP 프로토콜
+
+### TCP 연결방식
+
+- 3-way handshake : TCP 통신을 위한 연결 설정 과정
+  <img src="./img/tcp-3handshake.png"/>
+- 4-way handshake : TPC 연결 해제 과정
+  <img src="./img/tcp-4wayhandshake.png"/>
+
+### TCP 제어
+
+> 네트워크 트래픽에 따른 효율적 / 신뢰적 송신을 위한 제어 알고리즘
+
+- 흐름제어 (Flow Control): Sliding Window
+
+  - 매번 ACK를 기다리지 않고 여러 패킷을 연속해서 송신하기 위해
+  - 각 컴퓨터의 윈도우 사이즈를 확인하고, 윈도우 사이즈만큼 ACK없이 연속해서 송신
+
+  - 요즘에는 RTT(Round Trip Time)을 측정하여 바로 윈도우 사이즈를 재설정
+    (송신측과 수신측 모두 자신의 윈도우 사이즈를 65535로 설정)
+
+- 혼잡제어 (Congestion Control)
+
+  - 송신제어를 위한 윈도우는 2개
+
+    - Receiver Window(RWND): 흐름제어(Sliding Window)에서 활용
+    - Congestion Window(CWND): 네트워크 혼잡제어를 위해 활용
+
+  - 송신측 최종 윈도우 크기 = min(RWND, CWND)
+  - MSS = MTU(Maximum Transmission Unit / 한번 전송 때 보낼 수 있는 최대 단위) - IP헤더길이 - TCP 헤더길이 = 1500-20-20 = 1460 bytes
+  - 혼잡제어: AIMD(Addictive Increase / Multicative Decrease)
+    - AIMD 처음에는 CWND=1 ACK 가 도착하면 CWND ++;
+    - 일정시간 동안 도착하지 않음 = CWND/2
+  - 혼잡제어 : slow start 및 혼잡회피
+
+    - slow start
+    - 일반적으로 첨음에는 CWND=1
+    - ACK 도착하면 CWND= CWND\*2
+
+  - 혼잡 회피
+    - slow Stater를 사용하다가 CWND가 일정 크기에 도달하면 CWND= CWND+1
+
+## 다양한 프로토콜
+
+### HTTP
+
+- www란?
+  - W3 또는 웹
+  - 주요요소 : HTML, URL, HTTP
+- HTML : markup 언어, hypertext와 hyperlink로 구성
+
+- Server/Client모델로 Request / Response 사용
+  - Client 요청을 보내면, Server에서 응답을 준다.
+  - HTTP는 Connectionless 한 프로토콜임 - 1회성 Request 및 Response!
+  - TCP/IP socket을 이용해서 연결됨
+
+- HTTP는 Connectionless 방식
+- HTTP1.1은 keepalive 기능을 통해, 서버에서 설정된 keepalive timeout 까지는 연결과정 없이 데이터 송수신 가능
+  - 내부적으로 결국 매번 TCP 3-way handshake 과정을 거칠 필요가 없어짐
+
+### 인터넷 상에서 정보를 주고받는 프로토콜
+
+### HTTP method
