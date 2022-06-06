@@ -32,7 +32,12 @@ export default function SelectCard() {
   return (
     <>
       <button onClick={handleClick}>추첨하기</button>
-      <BusinessCard selectedCard={selectedCards[selectedCards.length - 1]} />
+      {selectedCards.map((selectedCard) => (
+        <BusinessCard
+          key={selectedCard.phoneNumber}
+          selectedCard={selectedCard}
+        />
+      ))}
     </>
   );
 }
