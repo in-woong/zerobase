@@ -203,3 +203,18 @@ const element = React.createElement(componenet, props, ...children);
   - 여러개의 컴포넌트를 렌더링 할 시 필요하다.
   - index를 key로 활용할 경우 목의 순서가 바뀔 수 있는 경우 key에 인덱스를 사용하는 것은 권장하지 않습니다. 이로 인해 성능이 저하되거나 컴포넌트의 state와 관련된 문제가 발생할 수 있습니다.
   - [공식문서](https://ko.reactjs.org/docs/reconciliation.html#recursing-on-children)
+
+## 이벤트 처리하기
+
+- [공식문서](https://ko.reactjs.org/docs/handling-events.html)
+- 합성이벤트
+- [예제문서](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/6/6-2/6-2-2)
+
+- 이벤트 버블링 시 비동기 함수가 당연히 나중에 실행 된다!
+- e.stopPropagation를 통해 이벤트 버블링을 막을 수 있다.
+
+### 클래스 컴포넌트에서 이벤트 처리하기
+
+- javascript의 this바인딩 문법에 따라, 메서드를 바인딩 시켜주어야 한다.
+
+## 폼과 제어 컴포넌트
