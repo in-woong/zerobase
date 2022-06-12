@@ -284,3 +284,36 @@ const element = React.createElement(componenet, props, ...children);
 
 - 캐멀케이스 프로퍼티를 사용한다.
 - 숫자 프로퍼티는 "px"를 자동으로 추가한다.
+
+- classnames패키지를 통해 의존성있는 className 추가 가능
+
+## CSS Modules
+
+- [공식문서](https://github.com/css-modules/css-modules)
+- [createApp에서 사용](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
+
+## CSS in JS
+
+- [공식문서](https://ko.reactjs.org/docs/faq-styling.html)
+
+- [styledComponent](https://styled-components.com/)
+
+- Component 단위 프로젝트를 진행 할 때 -> styled Component
+
+- interactive한 CSS가 많다면, 미리 모든 것을 로드하는 것 이 좋기 때문에 CSS Modules 추천
+
+# SPA란
+
+- [공식문서](https://ko.reactjs.org/docs/glossary.html)
+
+> 싱글 페이지 애플리케이션(Single-page application, SPA)은 하나의 HTML 페이지와 애플리케이션 실행에 필요한 JavaScript와 CSS 같은 모든 자산을 로드하는 애플리케이션입니다. 페이지 또는 후속 페이지의 상호작용은 서버로부터 새로운 페이지를 불러오지 않으므로 페이지가 다시 로드되지 않습니다.
+
+- 전통적인 웹 어플리케이션의 단점
+
+  1. 서버의 부담이 크다.
+  2. 속도가 느려질 수 있다.
+  3. 페이지 이동 시, 깜빡임이 발생한다
+
+     => url을 이동하더라도, 새로운 HTML을 서버에서 받지말고 화면을 Client에서 그리자! (Client Side Rendering)
+
+- [history API](https://developer.mozilla.org/ko/docs/Web/API/History_API)

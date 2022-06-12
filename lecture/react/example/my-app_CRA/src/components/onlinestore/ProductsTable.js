@@ -1,4 +1,5 @@
 import React from 'react';
+import * as S from './ProductsTable.style';
 
 export default function ProductsTable(props) {
   const { category, items, inStockOnly } = props;
@@ -9,12 +10,12 @@ export default function ProductsTable(props) {
   return (
     <>
       <tr>
-        <td style={{ fontWeight: 'bold' }}>{category}</td>
+        <S.Category style={{ fontWeight: 'bold' }}>{category}</S.Category>
       </tr>
 
       {filteredItems.map((item, idx) => (
         <tr key={idx}>
-          <td style={{ color: item.stocked ? 'black' : 'rd' }}>{item.name}</td>
+          <S.ProductName stocked={item.stocked}>{item.name}</S.ProductName>
           <td>{item.price}</td>
         </tr>
       ))}
