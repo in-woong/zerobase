@@ -1,5 +1,5 @@
 import './App.css';
-import OnlineStore from './components/OnlineStore';
+import OnlineStore from './components/OnlineStore_answer';
 
 import ToDoList from './components/TodoList';
 
