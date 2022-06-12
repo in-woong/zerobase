@@ -1,10 +1,10 @@
 import './App.css';
-import SimpleForm from './components/SimpleForm';
+import CatParent from './components/CatParent';
 
 function App() {
   return (
     <div className='App'>
-      <SimpleForm />
+      <CatParent/>
     </div>
   );
 }
