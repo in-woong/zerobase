@@ -256,3 +256,7 @@ const element = React.createElement(componenet, props, ...children);
 - useRef는 내용이 변경될 때 그것을 알려주지는 않는다는 것을 유념하세요. .current 프로퍼티를 변형하는 것이 리렌더링을 발생시키지는 않습니다.
 
 > 따라서, 리렌더링을 할 필요는 없지만 상태 관리를 해야할 때, useRef를 이용한 객체를 생성해서 활용할 수 있다.
+
+- React가 DOM 노드에 ref를 attach하거나 detach할 때 어떤 코드를 실행하고 싶다면 대신 콜백 ref를 사용하세요.
+
+[공식문서](https://ko.reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node)
