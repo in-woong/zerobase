@@ -250,3 +250,9 @@ const element = React.createElement(componenet, props, ...children);
 - [예제](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/6/6-3/6-3-5)
 
 ### callbackRef
+
+- useRef는 .current 프로퍼티로 전달된 인자(initialValue)로 초기화된 변경 가능한 ref 객체를 반환합니다. 반환된 객체는 컴포넌트의 전 생애주기를 통해 유지될 것입니다.
+
+- useRef는 내용이 변경될 때 그것을 알려주지는 않는다는 것을 유념하세요. .current 프로퍼티를 변형하는 것이 리렌더링을 발생시키지는 않습니다.
+
+> 따라서, 리렌더링을 할 필요는 없지만 상태 관리를 해야할 때, useRef를 이용한 객체를 생성해서 활용할 수 있다.
