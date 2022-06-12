@@ -267,3 +267,14 @@ const element = React.createElement(componenet, props, ...children);
 [예시](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/6/6-3/6-3-8)
 
 - 배열이 변화가 있다면 key 값을 unique하게 주어야 한다.
+
+## 합성과 상속
+
+[공식문서](https://ko.reactjs.org/docs/composition-vs-inheritance.html)
+
+- 컴포넌트간에 코드 재사용에 관한 이야기
+
+## React로 사고하기
+[공식문서](https://ko.reactjs.org/docs/thinking-in-react.html)
+
+
