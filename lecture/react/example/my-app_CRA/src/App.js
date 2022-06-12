@@ -1,10 +1,11 @@
 import './App.css';
-import CatParent from './components/CatParent';
+
+import ToDoList from './components/TodoList';
 
 function App() {
   return (
     <div className='App'>
-      <CatParent/>
+      <ToDoList />
     </div>
   );
 }

@@ -260,3 +260,10 @@ const element = React.createElement(componenet, props, ...children);
 - React가 DOM 노드에 ref를 attach하거나 detach할 때 어떤 코드를 실행하고 싶다면 대신 콜백 ref를 사용하세요.
 
 [공식문서](https://ko.reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node)
+
+## Form - key심화
+
+[공식문서](https://ko.reactjs.org/docs/lists-and-keys.html)
+[예시](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/6/6-3/6-3-8)
+
+- 배열이 변화가 있다면 key 값을 unique하게 주어야 한다.
