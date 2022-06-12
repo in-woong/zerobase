@@ -218,3 +218,35 @@ const element = React.createElement(componenet, props, ...children);
 - javascript의 this바인딩 문법에 따라, 메서드를 바인딩 시켜주어야 한다.
 
 ## 폼과 제어 컴포넌트
+
+### testArea
+
+### select
+
+### 다중 입력 제어하기
+
+## 비제어 컴포넌트
+
+- [공식문서](http://ko.reactjs.org/docs/uncontrolled-components.html)
+- ref를 사용하여 DOM에 직접 접근
+
+  - class => createRef
+  - 함수 => useRef
+
+- 직접 DOM에서 값을 가져오는 방식
+- [공식문서](https://ko.reactjs.org/docs/refs-and-the-dom.html)
+
+**Ref 사용할 때**
+
+- 포커스, 텍스트 선택영역, 혹은 미디어의 재생을 관리할 때.
+- 애니메이션을 직접적으로 실행시킬 때.
+- 서드 파티 DOM 라이브러리를 React와 같이 사용할 때.
+
+## ref
+
+### forwardRef, imperativeHandle
+
+- [공식문서](https://ko.reactjs.org/docs/forwarding-refs.html)
+- [예제](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/6/6-3/6-3-5)
+
+### callbackRef
