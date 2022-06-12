@@ -275,6 +275,12 @@ const element = React.createElement(componenet, props, ...children);
 - 컴포넌트간에 코드 재사용에 관한 이야기
 
 ## React로 사고하기
+
 [공식문서](https://ko.reactjs.org/docs/thinking-in-react.html)
 
+# 컴포넌트 스타일링
 
+[공식문서](https://ko.reactjs.org/docs/dom-elements.html#style)
+
+- 캐멀케이스 프로퍼티를 사용한다.
+- 숫자 프로퍼티는 "px"를 자동으로 추가한다.
