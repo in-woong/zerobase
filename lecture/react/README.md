@@ -317,3 +317,15 @@ const element = React.createElement(componenet, props, ...children);
      => url을 이동하더라도, 새로운 HTML을 서버에서 받지말고 화면을 Client에서 그리자! (Client Side Rendering)
 
 - [history API](https://developer.mozilla.org/ko/docs/Web/API/History_API)
+
+## React-Router
+
+## 비동기 프로그래밍과 Promise
+
+- 코드의 실행이 완료 될 때까지 기다리지 않고 다른 코드를 실행 시키고, 이 코드의 실행이 완료 되면 특정 코드를 실행시키고 싶을 때 => Promise 사용
+
+[공식문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+### async / await
+
+[공식문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)
