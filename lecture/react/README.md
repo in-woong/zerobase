@@ -329,3 +329,10 @@ const element = React.createElement(componenet, props, ...children);
 ### async / await
 
 [공식문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)
+
+- fetch API
+  [mdn](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API)
+
+ex. [기본적으로 제공되는 더미 API JSON placeholder](https://jsonplaceholder.typicode.com/)
+
+
