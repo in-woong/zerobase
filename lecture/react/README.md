@@ -335,4 +335,9 @@ const element = React.createElement(componenet, props, ...children);
 
 ex. [기본적으로 제공되는 더미 API JSON placeholder](https://jsonplaceholder.typicode.com/)
 
+- Axios
+  [공식문서](https://axios-http.com/kr/docs/intro)
 
+  - 요청 및 응답 인터셉트
+
+* UseEffect의 함수는 Promise를 반환하면 안되기 때문에, UseEffect의 첫번째 함수를 async로 묶어서 Promise를 반환하면 안된다.
