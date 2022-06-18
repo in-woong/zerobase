@@ -341,3 +341,21 @@ ex. [기본적으로 제공되는 더미 API JSON placeholder](https://jsonplace
   - 요청 및 응답 인터셉트
 
 * UseEffect의 함수는 Promise를 반환하면 안되기 때문에, UseEffect의 첫번째 함수를 async로 묶어서 Promise를 반환하면 안된다.
+
+## Custom Hook
+
+[공식문서](https://ko.reactjs.org/docs/hooks-custom.html)
+
+- useFetch를 어떻게 만들고 구현할 것인가...? 고민
+
+## SWR
+
+[공식문서](https://swr.vercel.app/docs/getting-started)
+
+## React Query
+
+[공식문서](https://react-query.tanstack.com/)
+
+# 전역상태관리
+
+## useContext
