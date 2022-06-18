@@ -359,3 +359,16 @@ ex. [기본적으로 제공되는 더미 API JSON placeholder](https://jsonplace
 # 전역상태관리
 
 ## useContext
+
+- Provider 하위에서 context를 구독하는 모든 컴포넌트는 Provider의 value prop가 바뀔때마다 다시 렡더링 된다.
+
+## useReducer
+
+- [공식문서](https://ko.reactjs.org/docs/hooks-reference.html#usereducer)
+
+- 다수의 하윗값을 포함하는 복잡한 정적 로직을 만드는 경우에 useReducer를 사용
+- 다음 state가 이전 state에 의존적인 경우에 보통 useState보다 useReducer를 선호한다.
+
+  - 객체가 병합되거나 useState처럼 한번에 실행되는 경우가 일어나지 않는다.
+
+- 렌더링하는 로직과 state를 분리시켜야 할 때 사용
