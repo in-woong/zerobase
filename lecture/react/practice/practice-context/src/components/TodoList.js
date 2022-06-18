@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import { TodoContext } from '../store/todos';
 import Todo from './Todo';
 export default function TodoList() {
-  const { todos } = useContext(TodoContext);
-  console.log('todos', todos);
+  const { displayTodos: todos } = useContext(TodoContext);
 
   return (
     <>

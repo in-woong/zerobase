@@ -360,7 +360,7 @@ ex. [기본적으로 제공되는 더미 API JSON placeholder](https://jsonplace
 
 ## useContext
 
-- Provider 하위에서 context를 구독하는 모든 컴포넌트는 Provider의 value prop가 바뀔때마다 다시 렡더링 된다.
+- Provider 하위에서 context를 구독하는 모든 컴포넌트는 Provider의 value prop가 바뀔때마다 다시 렌더링 된다.
 
 ## useReducer
 
@@ -410,6 +410,6 @@ ex. redux-thunk, redux saga, redux-observable
 |           가장 간단해서 진입장벽이 낮다.            | redux-thunk가 가진 몇가지 아쉬움을 보완한다. | 가장 진입 장벽이 높다. |
 
 - [chunk 공식문서](https://redux-toolkit.js.org/api/createAsyncThunk)
-https://github.com/reduxjs/redux-thunk
+  https://github.com/reduxjs/redux-thunk
 
 - [예제](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/11/my-redux-app)
