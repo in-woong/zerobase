@@ -372,3 +372,44 @@ ex. [기본적으로 제공되는 더미 API JSON placeholder](https://jsonplace
   - 객체가 병합되거나 useState처럼 한번에 실행되는 경우가 일어나지 않는다.
 
 - 렌더링하는 로직과 state를 분리시켜야 할 때 사용
+
+## Redux
+
+- contextAPI는 같은 객체에 들어잇는 값이 하나라도 변경되면 자식 컴포넌트들이 모두 리렌더링 된다.
+- 성능을 고려하면 번거로워진다.
+
+- Provider 하위에서 context를 구독하는 모든 컴포넌트는 Providerdml value props가 바뀔 때마다 다시 렌더링 됩니다. Provider로부터 하위 consumer (.contextType과 useContext를 포함한)로의 전파는 shouldComponenetUpdate 메서드가 적용되지 않으므로, 상위 컴포넌트가 업데이트를 건너 뛰더라도 consumer가 업데이트 됨니다.
+
+- [공식문서](https://ko.redux.js.org/introduction/getting-started/)
+
+- [내가만든 Todo list]()
+
+### Redux Toolkit
+
+- 공식적으로 추천하는 redux 로직을 작성하는 방법
+
+- [configureStore](https://redux-toolkit.js.org/api/configureStore)
+- [createReducer](https://redux-toolkit.js.org/api/createreducer)
+- [createSlice](https://redux-toolkit.js.org/api/createslice)
+
+- reducer는 순수함수이다.(동일한 인자가 주어졌을 경우 동일한 결과를 반환하는 함수)
+
+1. 컴포넌트의 useEffect내에서 API 호출하고 응답받은 결과를 스토어에 업데이트 해야한다.
+
+-> 가능하지만 좋은 방식은 아니다.
+
+2. middleware를 이용한다.
+
+- action 객체를 dispatch하고, reducer가 action 객체에 대해 store를 업데이트 하기 전에 추가적인 작업을 할 수 있게 도와준다.
+
+ex. redux-thunk, redux saga, redux-observable
+
+|                     redux-thunk                     |                  redux-saga                  |    redux-observable    |
+| :-------------------------------------------------: | :------------------------------------------: | :--------------------: |
+| dispatch에 action객체가 아닌 thunk 함수를 전달한다. |               generator를 활용               | Rx JS를 기반으로 한다. |
+|           가장 간단해서 진입장벽이 낮다.            | redux-thunk가 가진 몇가지 아쉬움을 보완한다. | 가장 진입 장벽이 높다. |
+
+- [chunk 공식문서](https://redux-toolkit.js.org/api/createAsyncThunk)
+https://github.com/reduxjs/redux-thunk
+
+- [예제](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/11/my-redux-app)

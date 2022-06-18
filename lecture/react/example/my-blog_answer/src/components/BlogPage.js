@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { UserContext } from '../store/user';
 
 export default function BlogPage() {
-  const dispatch = useContext(UserContext);
+  const { user, dispatch } = useContext(UserContext);
   console.log('dispatch', dispatch);
+  console.log('user', user);
   return (
     <div>
       <h1>BlogPage</h1>
@@ -12,6 +13,7 @@ export default function BlogPage() {
       >
         Change Job
       </button>
+      <h2>{user.job}</h2>
     </div>
   );
 }
