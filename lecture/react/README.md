@@ -413,3 +413,41 @@ ex. redux-thunk, redux saga, redux-observable
   https://github.com/reduxjs/redux-thunk
 
 - [예제](https://github.com/zerobase-school/2022-frontend-school-react/tree/master/11/my-redux-app)
+
+### 그 외 상태 관리 도구
+
+[3가지 비교 사이트](https://recoiljs.org/ko/)
+
+1. recoil
+   [공식문서]
+
+- 리액트 팀에서 직접 만든 상태관리 라이브러리
+- 비동기 데이터 통신을 위한 기능 제공
+- React 내부에 접근이 가능하여 동시성모드, suspense등을 손쉽게 지원 가능
+
+2. jotai
+
+- Recoil에 영향을 받아 일본에서 만들어진 라이브러리
+
+3. constate
+
+- React Context + State
+- Context의 단점을 개선
+
+## 비동기 통신과 전역상태 관리
+
+### React Query
+
+- A unique key for the query
+- a function that returns a promise that:
+  - resolves the data
+  - Throws an error
+
+#### useMutation
+
+- CUD를 할때 사용한다.(POST, PUT 요청 등)
+
+#### QueryClient
+
+- invalidateQueries method를 통해 outdated되었는지 아닌지를 알 수 있다.
+- useQuery는 항상 cache가 stale하다고 판단하는 것이 기본이다.
