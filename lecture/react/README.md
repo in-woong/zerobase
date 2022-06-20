@@ -478,5 +478,18 @@ ex. redux-thunk, redux saga, redux-observable
 
 ## Code Splitting
 
+- 번들이 용량이 크면, 첫 화면을 로드하는데 오래 걸릴 수 있다. 따라서 Code Splitting을 통해 처음 로드하는 화면을 나눈다.
+
 Dynamic import, React.lazy()
 [공식문서](https://ko.reactjs.org/docs/code-splitting.html)
+
+- 라우트가 code splitting을 하기 좋은 곳이다.
+
+## SSR
+
+[공식문서](https://ko.reactjs.org/docs/react-dom-server.html)
+
+- SEO(Search Engine Optimize가 힘들다
+- React로 구현한 javascript 코드를 HTML로 변환해서 서버가 내려주도록 한다.
+
+- [Next.js](https://nextjs.org/)
