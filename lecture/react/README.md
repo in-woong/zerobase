@@ -451,3 +451,17 @@ ex. redux-thunk, redux saga, redux-observable
 
 - invalidateQueries method를 통해 outdated되었는지 아닌지를 알 수 있다.
 - useQuery는 항상 cache가 stale하다고 판단하는 것이 기본이다.
+
+## React 18 Update
+
+[공식문서](https://ko.reactjs.org/docs/concurrent-mode-suspense.html#shat-is-suspense-exactly)
+
+1. useEffect를 사용헤서 데이터 불러오기 시에는 "워터폴" 문제가 발생한다.
+2. 불러오기 이후 렌더링 (Promise.all()은 모든 데이터가 불러와 져야, 반환하는 문제점)
+3. 불러올 때 렌더링(Suspense 사용)
+
+- 불러오기 시작 -> 렌더링 시작 -> 불러오기 완료
+
+### Suspense와 React Query 사용하기
+
+[공식문서](https://react-query.tanstack.com/guides/suspense)

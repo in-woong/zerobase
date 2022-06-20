@@ -10,15 +10,9 @@ export default function Home() {
   });
 
   return (
-    <>
-      {isLoading ? (
-        <span>isLoading...</span>
-      ) : (
-        <div>
-          <h1>Hello, {data.nickName}</h1>
-          <button onClick={() => navigate('/edit')}>Go Edit Page</button>
-        </div>
-      )}
-    </>
+    <div>
+      <h1>Hello, {data.nickName}</h1>
+      <button onClick={() => navigate('/edit')}>Go Edit Page</button>
+    </div>
   );
 }
