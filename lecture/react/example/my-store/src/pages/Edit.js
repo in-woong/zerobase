@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useQuery, useMutation, useQueryClient, useQueries } from 'react-query';
-import { Link } from 'react-router-dom';
-
+import { useMutation, useQueryClient, useQueries } from 'react-query';
 import { getPosts, getUser, updateNickname } from '../mocks/api';
+
+// import ("./Math").then(math=>console.log(math(1,2)))
 
 export default function Edit() {
   const [inputValue, setInputValue] = useState('');
@@ -35,7 +35,7 @@ export default function Edit() {
     e.preventDefault();
     mutation.mutate(inputValue);
   };
-  
+
   return (
     <>
       <h1>Edit</h1>

@@ -465,3 +465,18 @@ ex. redux-thunk, redux saga, redux-observable
 ### Suspense와 React Query 사용하기
 
 [공식문서](https://react-query.tanstack.com/guides/suspense)
+
+# 렌더링 성능 최적화
+
+[예시](https://codesandbox.io/s/frosty-pine-nvhewx)
+
+- useMemo, useCallback
+  [공식문서](https://ko.reactjs.org/docs/hooks-reference.html#usememo)
+- React.memo
+  [공식문서](https://ko.reactjs.org/docs/react-api.html#reactmemo)
+  - 동일한 props로 동일한 결과를 낸다면, 리렌더링 하지 않는다.
+
+## Code Splitting
+
+Dynamic import, React.lazy()
+[공식문서](https://ko.reactjs.org/docs/code-splitting.html)
