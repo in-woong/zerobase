@@ -493,3 +493,9 @@ Dynamic import, React.lazy()
 - React로 구현한 javascript 코드를 HTML로 변환해서 서버가 내려주도록 한다.
 
 - [Next.js](https://nextjs.org/)
+  This means that Next.js generates HTML for each page in advance,
+
+1.  Static Generation
+2.  Server-sied Rendering
+
+- A React component called Link is provided to do this client-side route transition.
