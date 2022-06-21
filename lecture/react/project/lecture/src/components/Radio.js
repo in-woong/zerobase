@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRadioGroup } from './RadioGroup';
 
 export default function Radio({ id, name, value, label }) {
-  const { updateGroupStates, ...group } = useRadioGroup();
+  const { updateGroupStates } = useRadioGroup();
 
   const [state, setState] = useState({
     id,
@@ -12,12 +12,8 @@ export default function Radio({ id, name, value, label }) {
   });
 
   useEffect(() => {
-    if (state.selected) updateGroupStates(state);
+    updateGroupStates(state);
   }, [state.selected]);
-
-  useEffect(() => {
-    setState({ ...state, selected: id === group.selectedId });
-  }, [group.selectedId]);
 
   const handleChange = () => {
     setState({ ...state, selected: true });
@@ -25,8 +21,8 @@ export default function Radio({ id, name, value, label }) {
 
   return (
     <label htmlFor={id}>
-      <input type='radio' name={name} value={value} onChange={handleChange} />
       {label}
+      <input type='radio' name={name} value={value} onChange={handleChange} />
     </label>
   );
 }
