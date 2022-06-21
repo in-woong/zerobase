@@ -8,9 +8,9 @@ import Radio from '../src/components/Radio';
 export default function deviceChoice() {
   const router = useRouter();
   const [selectedDevice, setSelectedDevice] = useState();
-  
+
   const handleClick = () => {
-    localStorage.setItem("device",selectedDevice)
+    localStorage.setItem('device', selectedDevice);
     router.push('/accessory-choice');
   };
   return (
