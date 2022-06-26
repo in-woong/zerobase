@@ -10,24 +10,34 @@
 
 <body>
   <div id="app">
-    <input class="input" type="text">
-    <button class="reset">AC</button>
-    <button class="cal">%</button>
-    <button class="cal">+</button>
-    <button class="cal">-</button>
-    <button class="cal">*</button>
-    <button class="return">=</button>
-    <button class="number">7</button>
-    <button class="number">8</button>
-    <button class="number">9</button>
-    <button class="number">4</button>
-    <button class="number">5</button>
-    <button class="number">6</button>
-    <button class="number">7</button>
-    <button class="number">1</button>
-    <button class="number">2</button>
-    <button class="number">3</button>
-    <button class="number">0</button>
+    <article class="calculator">
+      <section class="result-container">
+        <div id="result">0</div>
+      </section>
+      <section class="contents">
+        <section class="numbers">
+          <button class="number">1</button>
+          <button class="number">2</button>
+          <button class="number">3</button>
+          <button class="number">4</button>
+          <button class="number">5</button>
+          <button class="number">6</button>
+          <button class="number">7</button>
+          <button class="number">8</button>
+          <button class="number">9</button>
+          <button class="number">0</button>
+        </section>
+        <section class="operators">
+          <button class="operator">AC</button>
+          <button class="operator">+</button>
+          <button class="operator">-</button>
+          <button class="operator">*</button>
+          <button class="operator">%</button>
+          <button class="operator">=</button>
+        </section>
+      </section>
+    </article>
+
   </div>
   <script type="module" src="/src/main.ts"></script>
 </body>
