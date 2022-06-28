@@ -97,7 +97,6 @@ class TodoApp {
     containerEl.innerHTML = todoTemplate;
 
     const delBtn = containerEl.querySelector('button');
-    console.log(delBtn);
     delBtn?.addEventListener('click', () => this.removeTodo(todoList.id));
     return containerEl;
   }
