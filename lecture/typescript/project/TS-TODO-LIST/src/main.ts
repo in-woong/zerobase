@@ -11,12 +11,42 @@ class TodoApp {
   /**
    * @constructs TodoApp
    */
-  constructor() {}
+  constructor() {
+    this.todoList = [];
+    this.initEvent();
+  }
+
+  initEvent() {
+    const inputEl = document.querySelector('#todo-input');
+
+    inputEl?.addEventListener('keydown', this.addTodo);
+  }
+
   /**
    * 할일을 추가할 수 있다.
    * @param {string} text
    */
-  addTodo(text) {}
+  addTodo = (event: KeyboardEventInit) => {
+    if (event.key !== 'Enter') {
+      return;
+    }
+
+    const target = <HTMLInputElement>(event as KeyboardEvent).target;
+    if (!target.value) {
+      return;
+    }
+
+    const newTodo = {
+      id: this.todoList.length + 1,
+      content: target.value,
+      isDone: false,
+    };
+    this.todoList.push(newTodo);
+
+    target.value = '';
+
+    this.render([newTodo]);
+  };
 
   /**
    *모든 할 일을 조회할 수 있다.
@@ -24,8 +54,7 @@ class TodoApp {
    * @returns {Todo[]}전체할일
    */
   getTodoList() {
-    const todo = { id: 13243, content: 'T', isDone: false };
-    return [todo];
+    return this.todoList;
   }
 
   /**
@@ -48,11 +77,16 @@ class TodoApp {
    *
    * @param {number}id
    */
-  removeTodo(id) {}
-  generateTodoList(todoList) {
+  removeTodo(id: Todo['id']) {
+    console.log(id);
+    this.todoList = this.todoList.filter((todo) => todo.id !== id);
+    this.render(this.todoList);
+  }
+
+  generateTodoList(todoList: Todo) {
     const containerEl = document.createElement('div');
-    const todoTemplate = `<div class="item__div">
-    <input type="checkbox ${todoList.isDone && 'checked'}"/>
+    const todoTemplate = `<div class="item__div" >
+    <input type="checkbox" ${todoList.isDone && 'checked'}/>
     <div class='content ${todoList.isDone && 'checked'}'>${
       todoList.content
     }</div>
@@ -61,21 +95,23 @@ class TodoApp {
 
     containerEl.classList.add('item');
     containerEl.innerHTML = todoTemplate;
+
+    const delBtn = containerEl.querySelector('button');
+    console.log(delBtn);
+    delBtn?.addEventListener('click', () => this.removeTodo(todoList.id));
     return containerEl;
   }
-  render() {
-    console.log('Render');
+
+  render(todoList: Todo[] = []) {
     const todoListEl = document.querySelector('.todo-items');
     const fragment = document.createDocumentFragment();
-    const todoListComponent = this.getTodoList().map((todo) =>
+    const todoListComponent = todoList.map((todo) =>
       this.generateTodoList(todo)
     );
 
     fragment.append(...todoListComponent);
 
     todoListEl?.appendChild(fragment);
-
-    console.log(todoListEl);
   }
 }
 
