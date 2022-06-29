@@ -12,10 +12,12 @@
     <div id="app">
         <section class="todo-container">
             <div class="title">TypeScript Todos</div>
+
             <section class="todo-control">
-                <button>전체 </button>
-                <button>완료</button>
-                <button>해야할 것</button>
+                <div id="todo-count">0</div>
+                <button class="btn all">all</button>
+                <button class="btn completed">completed</button>
+                <button class="btn unCompleted">uncompleted</button>
             </section>
             <section class="todo-list">
                 <input type="text" id="todo-input" placeholder="할 일을 추가해주세요.">

@@ -5,21 +5,54 @@ interface Todo {
   content: string;
   isDone: boolean;
 }
+enum FilterStatus {
+  All = 'all',
+  Completed = 'completed',
+  Active = 'uncompleted',
+}
+
+// type FilterType = typeof FilterStatus[keyof typeof FilterStatus]
+type FilterType = `${FilterStatus}`;
 
 class TodoApp {
   todoList: Todo[];
+  filterStatus: FilterType;
   /**
    * @constructs TodoApp
    */
   constructor() {
     this.todoList = [];
+    this.filterStatus = 'all';
     this.initEvent();
   }
 
   initEvent() {
     const inputEl = document.querySelector('#todo-input');
+    const controlBtns = document.querySelectorAll('.todo-control > button');
+    controlBtns.forEach((btn) => {
+      if (!(btn as HTMLButtonElement).innerText) {
+        return;
+      }
+      const text = (btn as HTMLButtonElement).innerText as FilterType;
+      btn.addEventListener('click', (event: MouseEventInit) => {
+        this.filterStatus = text;
 
+        this.toggleFilterStatus(event);
+        this.render();
+      });
+    });
     inputEl?.addEventListener('keydown', this.addTodo);
+  }
+
+  toggleFilterStatus(event: MouseEventInit) {
+    const controlBtns = document.querySelectorAll('.todo-control > button');
+    controlBtns.forEach((btn) => btn.classList.remove('active'));
+
+    const targetElement = (event as MouseEvent).target as HTMLButtonElement;
+
+    if (targetElement) {
+      targetElement.classList.add('active');
+    }
   }
 
   /**
@@ -45,7 +78,7 @@ class TodoApp {
 
     target.value = '';
 
-    this.render([newTodo]);
+    this.render();
   };
 
   /**
@@ -63,7 +96,19 @@ class TodoApp {
    * @param {string} text
    * @returns {Todo[]} 필터링된 할일
    */
-  getTodoListByFilter(filterType) {}
+  getTodoListByFilter(filterType: FilterType) {
+    console.log(filterType);
+    if (filterType === FilterStatus.All) {
+      return this.todoList;
+    }
+    if (filterType === FilterStatus.Completed) {
+      return this.todoList.filter((todo) => todo.isDone);
+    }
+    if (filterType === FilterStatus.Active) {
+      return this.todoList.filter((todo) => !todo.isDone);
+    }
+    return this.todoList;
+  }
 
   /**
    * 할일의 내용과 상태를 수정할 수 있다.
@@ -72,7 +117,35 @@ class TodoApp {
    * @param {string}[todo.text] - 수정될 내용
    * @param {string}[todo.status] - 수정될 상태
    */
-  updateTodo({ id, text, status }) {}
+  updateTodo(event: MouseEventInit, selectedId: Todo['id']) {
+    const inputText =
+      (event as MouseEvent).target &&
+      ((event as MouseEvent).target as HTMLInputElement).innerText;
+    if (!inputText) return;
+    const selectedIndex = this.todoList.findIndex(
+      (todo) => todo.id === selectedId
+    );
+    const selectedTodo = this.todoList[selectedIndex];
+    const newTodo = {
+      ...selectedTodo,
+      content: inputText,
+    };
+    this.todoList.splice(selectedIndex, 1, newTodo);
+    this.render();
+  }
+
+  updateTodoStatus(selectedId: Todo['id']) {
+    const selectedIndex = this.todoList.findIndex(
+      (todo) => todo.id === selectedId
+    );
+    const selectedTodo = this.todoList[selectedIndex];
+    const newTodo = {
+      ...selectedTodo,
+      isDone: !selectedTodo.isDone,
+    };
+    this.todoList.splice(selectedIndex, 1, newTodo);
+    this.render();
+  }
   /**
    *
    * @param {number}id
@@ -80,7 +153,7 @@ class TodoApp {
   removeTodo(id: Todo['id']) {
     console.log(id);
     this.todoList = this.todoList.filter((todo) => todo.id !== id);
-    this.render(this.todoList);
+    this.render();
   }
 
   generateTodoList(todoList: Todo) {
@@ -97,20 +170,37 @@ class TodoApp {
     containerEl.innerHTML = todoTemplate;
 
     const delBtn = containerEl.querySelector('button');
+    const checkboxEl = containerEl.querySelector('input[type=checkbox]');
+    const contentEl = containerEl.querySelector('.content');
+
     delBtn?.addEventListener('click', () => this.removeTodo(todoList.id));
+    contentEl?.addEventListener('blur', (event) =>
+      this.updateTodo(event, todoList.id)
+    );
+    checkboxEl?.addEventListener('change', () =>
+      this.updateTodoStatus(todoList.id)
+    );
     return containerEl;
   }
 
-  render(todoList: Todo[] = []) {
+  render() {
     const todoListEl = document.querySelector('.todo-items');
+    const todoCountEl = document.querySelector('#todo-count');
+    todoListEl?.replaceChildren();
+    const currentTodoList = this.getTodoListByFilter(this.filterStatus);
     const fragment = document.createDocumentFragment();
-    const todoListComponent = todoList.map((todo) =>
+    const todoListComponent = currentTodoList.map((todo) =>
       this.generateTodoList(todo)
     );
 
     fragment.append(...todoListComponent);
 
     todoListEl?.appendChild(fragment);
+    if (todoCountEl) {
+      (todoCountEl as HTMLDivElement).innerText = String(
+        currentTodoList.length
+      );
+    }
   }
 }
 
