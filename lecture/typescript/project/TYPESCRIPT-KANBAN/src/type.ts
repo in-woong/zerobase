@@ -1,5 +1,5 @@
 export interface Todo {
-  id: number;
+  id: string;
   content: {
     title: string;
     body: string;
@@ -7,7 +7,7 @@ export interface Todo {
   isDone: boolean;
   category: string;
   tags?: {
-    id: number;
+    id: string;
     content: string;
   }[];
 }
@@ -20,8 +20,8 @@ export interface DoneTodo extends Todo {
   isDone: true;
 }
 
-export interface Kanban {
-  id: number;
+export interface TodoList {
+  id: string;
   title: string;
-  todos: Todo[];
+  list: Todo[];
 }
