@@ -1,12 +1,17 @@
 import { Todo } from './../type';
 import { tagTemplate } from './tagTemplate';
 
-export function listTemplate(
-  todoId: Todo['id'],
-  title: Todo['content']['title'],
-  content: Todo['content'],
-  tags: Todo['tags']
-) {
+export function listTemplate({
+  todoId,
+  title,
+  content,
+  tags,
+}: {
+  todoId: Todo['id'];
+  title: Todo['content']['title'];
+  content: Todo['content'];
+  tags: Todo['tags'];
+}) {
   return `
     <section class="todo" id="${title}+${todoId}">
         <div class="todo-item">

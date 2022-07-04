@@ -1,7 +1,7 @@
 import './style.css';
 import { v4 as uuidv4 } from 'uuid';
 
-import { isButtonElement, Todo, TodoList } from './type';
+import { isButtonElement, Todo, TodoList, InProgressTodo, Tag } from './type';
 import { defaultKanban } from './mock';
 import {
   cardTemplate,
@@ -68,9 +68,7 @@ class KanbanApp {
     $removeListButton?.forEach((btn) => {
       btn.addEventListener('click', ({ currentTarget }) => {
         if (currentTarget && isButtonElement(currentTarget)) {
-          const id = currentTarget.id.split(
-            'kanban-'
-          )[1];
+          const id = currentTarget.id.split('kanban-')[1];
 
           this.removeList(id);
         }
@@ -134,9 +132,9 @@ class KanbanApp {
     selectedId,
     tagContent,
   }: {
-    category?: string;
-    selectedId: string;
-    tagContent?: string;
+    category?: Todo['category'];
+    selectedId: Todo['id'];
+    tagContent?: Tag['content'];
   }) {
     const listId = this.kanban.findIndex((list) => list.title === category);
     const targetList = this.kanban.find((list) => list.title === category);
@@ -163,9 +161,9 @@ class KanbanApp {
     selectedTagId,
     selectedTodoId,
   }: {
-    category?: string;
-    selectedTagId: string;
-    selectedTodoId?: string;
+    category?: Todo['category'];
+    selectedTagId: Tag['id'];
+    selectedTodoId?: Todo['id'];
   }) {
     const listId = this.kanban.findIndex((list) => list.title === category);
     const targetList = this.kanban.find((list) => list.title === category);
@@ -212,7 +210,7 @@ class KanbanApp {
           const title = $todo?.querySelector('.add-title')?.textContent;
           const body = $todo?.querySelector('.add-content')?.textContent;
 
-          const newTodo: Todo = {
+          const newTodo: InProgressTodo = {
             id: uuidv4(),
             content: {
               title: title ?? '',
@@ -231,7 +229,7 @@ class KanbanApp {
     return $list;
   }
 
-  removeList(selectedId: string) {
+  removeList(selectedId: Todo['id']) {
     this.kanban = this.kanban.filter((list) => list.id !== selectedId);
     this.render();
   }
@@ -242,8 +240,13 @@ class KanbanApp {
     const addBtnElement = addListBtnTemplate(title);
 
     const listHTML = list
-      ?.map(({ id: todoId, content, tags }) =>
-        listTemplate(todoId, title, content, tags)
+      ?.map(
+        ({
+          id: todoId,
+          content,
+          tags,
+        }: Pick<Todo, 'id' | 'content' | 'tags'>) =>
+          listTemplate({ todoId, title, content, tags })
       )
       .join('');
 
