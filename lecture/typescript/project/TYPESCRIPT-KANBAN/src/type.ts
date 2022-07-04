@@ -25,3 +25,9 @@ export interface TodoList {
   title: string;
   list: Todo[];
 }
+
+export function isButtonElement(
+  targetElement: EventTarget | HTMLElement
+): targetElement is HTMLButtonElement {
+  return targetElement && targetElement instanceof HTMLButtonElement;
+}

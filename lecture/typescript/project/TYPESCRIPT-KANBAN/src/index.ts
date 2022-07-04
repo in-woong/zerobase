@@ -1,15 +1,25 @@
 import './style.css';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Todo, TodoList } from './type';
+import { isButtonElement, Todo, TodoList } from './type';
 import { defaultKanban } from './mock';
+import {
+  cardTemplate,
+  addListBtnTemplate,
+  listTemplate,
+  listHeaderTemplate,
+} from './templates';
 
 class KanbanApp {
-  list: TodoList[];
+  kanban: TodoList[];
 
   constructor(data: TodoList[]) {
-    this.list = data;
+    this.kanban = data;
 
+    this.render();
+  }
+
+  mount() {
     this.render();
     this.attachEvent();
   }
@@ -25,22 +35,27 @@ class KanbanApp {
       $board.innerHTML = '';
 
       const fragment = document.createDocumentFragment();
-      const listElements = this.list.map((list) => this.generateList(list));
+      const listElements = this.kanban.map((todo) => this.generateList(todo));
 
       fragment.append(...listElements);
       $board.append(fragment, $addListButton);
     }
+    this.attachEvent();
   }
 
   attachEvent() {
     const $addListButton = document.querySelector('.board.add');
     const $removeListButton = document.querySelectorAll('.kanban-delete');
     const $addTodoButton = document.querySelectorAll('.todo-item.add');
+    const $removeTodoButton = document.querySelectorAll('.delete-item');
+    const $addTagButton = document.querySelectorAll('.add-btn');
+    const $removeTagButton = document.querySelectorAll('.delete-tag');
 
     $addListButton?.addEventListener('click', () => {
       const newId = uuidv4();
-      this.list = [
-        ...this.list,
+
+      this.kanban = [
+        ...this.kanban,
         {
           id: newId,
           title: `kanban-${newId}`,
@@ -51,52 +66,146 @@ class KanbanApp {
     });
 
     $removeListButton?.forEach((btn) => {
-      btn?.addEventListener('click', ({ currentTarget }) => {
-        const id = (currentTarget as HTMLButtonElement).id.split('kanban-')[1];
+      btn.addEventListener('click', ({ currentTarget }) => {
+        if (currentTarget && isButtonElement(currentTarget)) {
+          const id = currentTarget.id.split(
+            'kanban-'
+          )[1];
 
-        this.removeList(id);
+          this.removeList(id);
+        }
       });
     });
 
     $addTodoButton.forEach((btn) => {
       btn.addEventListener('click', ({ currentTarget }) => {
-        if (currentTarget instanceof HTMLButtonElement) {
-          const [, category] = (currentTarget as HTMLButtonElement).id.split(
-            'add-todo-'
-          );
+        if (currentTarget && isButtonElement(currentTarget)) {
+          const [, category] = currentTarget.id.split('add-todo-');
 
           currentTarget?.closest('.wrapper')?.prepend(this.addTodo(category));
         }
       });
     });
+
+    $removeTodoButton.forEach((btn) => {
+      btn.addEventListener('click', ({ currentTarget }) => {
+        if (currentTarget && isButtonElement(currentTarget)) {
+          const category = currentTarget?.closest('.todo')?.id.split('+')[0];
+          const selectedId = currentTarget.id.split('delete-todo-')[0];
+
+          this.removeTodo(selectedId, category ?? '');
+        }
+      });
+    });
+
+    $addTagButton.forEach((btn) => {
+      btn.addEventListener('click', ({ currentTarget }) => {
+        if (!(currentTarget && isButtonElement(currentTarget))) return;
+
+        const category = currentTarget.closest('.todo')?.id.split('+')[0];
+        const selectedId = currentTarget.id.split('todo-')[1];
+
+        const tagContent =
+          currentTarget.closest('.tag')?.querySelector('span')?.textContent ??
+          '';
+
+        this.addTag({ category, selectedId, tagContent });
+      });
+    });
+
+    $removeTagButton.forEach((btn) => {
+      btn.addEventListener('click', ({ currentTarget }) => {
+        if (!(currentTarget && isButtonElement(currentTarget))) return;
+
+        const category = currentTarget.closest('.todo')?.id.split('+')[0];
+
+        const selectedTodoId = currentTarget
+          .closest('.tag')
+          ?.id.split('tag-')[1];
+        const selectedTagId = currentTarget.id.split('todo-delete-')[1];
+
+        this.removeTag({ category, selectedTagId, selectedTodoId });
+      });
+    });
+  }
+
+  addTag({
+    category,
+    selectedId,
+    tagContent,
+  }: {
+    category?: string;
+    selectedId: string;
+    tagContent?: string;
+  }) {
+    const listId = this.kanban.findIndex((list) => list.title === category);
+    const targetList = this.kanban.find((list) => list.title === category);
+
+    const todo = targetList?.list.find((todo) => todo.id === selectedId);
+    const todoIndex = targetList?.list.findIndex(
+      (todo) => todo.id === selectedId
+    );
+
+    todo?.tags?.push({
+      id: uuidv4(),
+      content: tagContent ?? '태그',
+    });
+
+    if (todoIndex && todo) {
+      this.kanban[listId].list.splice(todoIndex, 1, todo);
+    }
+
+    this.render();
+  }
+
+  removeTag({
+    category,
+    selectedTagId,
+    selectedTodoId,
+  }: {
+    category?: string;
+    selectedTagId: string;
+    selectedTodoId?: string;
+  }) {
+    const listId = this.kanban.findIndex((list) => list.title === category);
+    const targetList = this.kanban.find((list) => list.title === category);
+
+    if (targetList) {
+      const todo = targetList.list.find((todo) => todo.id === selectedTodoId);
+      const todoIndex = targetList.list.findIndex(
+        (todo) => todo.id === selectedTodoId
+      );
+
+      const newTag = todo?.tags?.filter((tag) => tag.id !== selectedTagId);
+
+      this.kanban[listId].list[todoIndex].tags = newTag;
+      this.render();
+    }
+  }
+
+  removeTodo(selectedId: string, category: string) {
+    const listId = this.kanban.findIndex((list) => list.title === category);
+    const targetList = this.kanban.find((list) => list.title === category);
+
+    if (targetList) {
+      this.kanban[listId].list = targetList?.list.filter(
+        (todo) => todo.id !== selectedId
+      );
+
+      this.render();
+    }
   }
 
   addTodo(category: string) {
     const $list = document.createElement('section');
     $list.classList.add('todo');
     $list.setAttribute('id', 'add-item');
-    const template = `
-    <div class="todo-item add-item">
-        <div>
-            <div class="item-header">
-                <div class="item-title">
-                    <span class="item-title-icon"></span>
-                    <div class="title add-title" contentEditable> 제목</div>
-                </div>
-            </div>
-            <div class="todo-content add-content" contentEditable>내용</div>
-        
-        </div>
-        <div class="todo-control">
-            <button class="cancel">Cancel</button>
-            <button class="add>Add Item</button>
-        </div>
-    </div>`;
-    $list.innerHTML = template;
+
+    $list.innerHTML = cardTemplate();
     $list
       .querySelector('.add')
       ?.addEventListener('click', ({ currentTarget }) => {
-        const listId = this.list.findIndex(({ title }) => title === category);
+        const listId = this.kanban.findIndex(({ title }) => title === category);
 
         if (currentTarget && currentTarget instanceof HTMLButtonElement) {
           const $todo = currentTarget.closest('.todo-item');
@@ -114,7 +223,7 @@ class KanbanApp {
             tags: [],
           };
 
-          this.list[listId].list = [...this.list[listId].list, newTodo];
+          this.kanban[listId].list = [...this.kanban[listId].list, newTodo];
 
           this.render();
         }
@@ -123,88 +232,27 @@ class KanbanApp {
   }
 
   removeList(selectedId: string) {
-    this.list = this.list.filter((list) => list.id !== selectedId);
+    this.kanban = this.kanban.filter((list) => list.id !== selectedId);
     this.render();
   }
 
   generateList({ id, title, list }: TodoList) {
     const $list = document.createElement('section');
     $list.classList.add('board');
-    const addBtnElement = `
-    <section class="todo">
-        <button class="todo-item add" id="add-todo-${title}">
-            <span class="plus-btn blue">plus</span>
-        </button>
-    </section>`;
+    const addBtnElement = addListBtnTemplate(title);
 
-    const todoHTML = list
-      ?.map(({ id: todoId, content, tags }) => {
-        return `
-        <section class="todo" id="${title}+${todoId}">
-            <div class="todo-item">
-                <div class="wrapper">
-                    <div class="item-header">
-                        <div class="item-title">
-                            <span class="item-title-icon">item-icon</span>
-                            <div class="title>${
-                              content ? content.title : ''
-                            }></div>
-                        </div>
-                        <div class="todo-control">                        
-                            <button class="delete-item" id="delete-todo-${todoId}">
-                                <span class="delete-btn">delete-${todoId}</span>
-                            </button>
-                        </div>
-                    </div>
-            
-                    <div class="todo-content">${
-                      content ? content.body : ''
-                    }</div>
-                </div>
-            
-                <div class="tags">
-                ${
-                  tags &&
-                  tags
-                    .map(({ id: tagId, content }) => {
-                      return `<span class="tag" id="tag-${todoId}>
-                                ${content}
-                                <button class="delete-tag delete-btn" id="todo-delete-${tagId}">delete-${tagId}</button>
-                                </span>`;
-                    })
-                    .join('')
-                }
-                <div class="tag add-tag-btn">
-                    <span contentEditable>태그</span>
-                    <button class="add-btn" id="todo-${todoId}">add-${todoId}</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    `;
-      })
+    const listHTML = list
+      ?.map(({ id: todoId, content, tags }) =>
+        listTemplate(todoId, title, content, tags)
+      )
       .join('');
 
-    const $item = `
-                <section class=board-title">
-                    <div class="board-header">
-                        <div class="total"><span id="todo-count">${
-                          list?.length ?? 0
-                        }</span></div>
-                        <h2 class="title">${title}</h2>
-                    </div>
-                    
-                    <div class="board-control">
-                        <button class="kanban-delete" id="kanban-${id}">
-                            <span class="delete-btn">kanban-deleteBtn</span>
-                        </button>
-                    </div>
-                    
-                    <div class="wrapper">
-                        ${addBtnElement}
-                        ${list?.length ? todoHTML : ''}
-                    </div>`;
+    const $item = `${listHeaderTemplate({ list, title, id })}
+                <div class="wrapper">
+                    ${addBtnElement}
+                    ${list?.length ? listHTML : ''}
+                </div>`;
+
     $list.innerHTML = $item;
     return $list;
   }
