@@ -1,7 +1,8 @@
 import './style.css';
 import { v4 as uuidv4 } from 'uuid';
 
-import { isButtonElement, Todo, TodoList, InProgressTodo, Tag } from './type';
+import type { Todo, TodoList, InProgressTodo, Tag } from './type';
+import { isButtonElement } from './type';
 import { defaultKanban } from './mock';
 import {
   cardTemplate,
