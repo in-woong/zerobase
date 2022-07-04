@@ -1,12 +1,12 @@
-import { Todo } from './../type';
+import { Todo, Tag } from './../type';
 
-export function tagTemplate(tags: Todo['tags'], todoId: string) {
+export function tagTemplate(tags: Todo['tags'], todoId: Todo['id']) {
   return `
   <div class="tags">
     ${
       tags &&
       tags
-        .map(({ id: tagId, content }) => {
+        .map(({ id: tagId, content }: Tag) => {
           return `<span class="tag" id="tag-${todoId}">
                     ${content}
                     <button class="delete-tag delete-btn" id="todo-delete-${tagId}">delete</button>

@@ -1,4 +1,4 @@
-import { Todo, DoneTodo, inProgressTodo, TodoList } from './type';
+import { Todo, DoneTodo, InProgressTodo, TodoList } from './type';
 
 export const todoList: Todo[] = [
   {
@@ -10,7 +10,7 @@ export const todoList: Todo[] = [
   },
 ];
 
-export const inProgressList: inProgressTodo[] = [
+export const inProgressList: InProgressTodo[] = [
   {
     id: '0',
     content: { title: '제목', body: '내용' },
