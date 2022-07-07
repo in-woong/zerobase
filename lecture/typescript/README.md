@@ -235,3 +235,113 @@
   - returnType[playground](https://www.typescriptlang.org/play?#code/PQKhCgAIUwCccD6XA1nYB6XKAGFwoeOUDprhKscBqrgDHWRQzgjDgCWAdgC4CmATgGYCGAxg5AArMDOAexqQA3lEiSabALYMAXJH50mtAOYTJbNQsg0ArjIBGzcAF9w4OgE8ADtwAqARkgBeXmyZ0qbADYAePiYhGgA+KztHACY3SAAlBgBHfSomBgATQIFhcIj7XmyaAHlbOlieT28-LOCcy2BgSBZ9Gg5vYUgdOgBJGhZBAApbeSCQgEpxBslptLp9JhFbcCmLcGbW9pEu3v6hxVHhEroxsU1IWfnF80taRlZObgBBGioZP1PpvVldZVUaDU+NnsAH5FL91Nc8k8Xm9fAlkqkMrF4Sk0plnq8-Ll1m0qB1tn1BCjEek9pAMbDiWiTuJPhcFpAlqspgT+lSMgNRF85AAiNgwvw8sxjSwcYTKSD8zG+RQJNjpYS+az+ClY2K06bSOSKHkAEUEah5ABozkDdDzAKg1gBFRwADk8bIVLYQA6M2xHmAA5rAImjgBdxnmi8WCXwMJ2+A0DR1+EVQjx0AAWbtjgl5kAAPpAeYImOlmDzU+mOJU-dR6Mx2FwY7GAKpxAAyH2mtjYcbBKghzMaUzFNAl0gAbhVm-EGGKs4Em7GjUpW-9Qurlo1PontemABJJhj2qafTPZpg6nc5k1b6YFrw6090TeNVZdntsfuPQcJEeZAcTivVmuz9wayRL3S-p8jLjjqwD-n6nxmCa25ZswiiAZ8jaDjywAHkwEHTFBZwXvBZyISB6bABeGGSFh7ZFDIVBlP4ZqTgA1gw1jhLcpYPJAABiqgMDQ6T8PWUjfC2fxqNB0zaLoBjGMwomSIwMp6IYJhMJCroAEJsPwADuDA7IInFUNxvGxBRVH+Pphn8JOfI6DyuS3mUMjWOZPH8Io6laTphLOUZP5nFq5qADpzgA2tfagIMPJThOAAnCa7Y8FQHB0TRkT0YxuSukUNBKgAct8BwiO48WJWZXEuVZ-m5mmPJybZ-rdg5uiZTleWFHOnz+TqvIyZAcmKJFUWQg0ACiAAeHC+Po2b+Jgk6ADgTgAeY4ABqtwIAE02ABRjkCACZdgAhPeErqqr4fHuDyACy-KVemADqSbnXmPIAMJNhdeoGkWrpBIIISxKN42TQwKoCodVmPZed36oauTDSNKicHQ00YJOgAKtYAi5OAJarkCADtDgA1C5AgAYQ5AgAR44AKU2rRtO17ZEkCjbIthBt90NMLD-g8k4z1RM9ADMxrplzd0ACzPQArLV87ZcIBi+L4bBGEG8MU-kDiRC47hizQ2X6JL0uy+C-x5pJSl5kYgiBgw-J5i02YsLQGTy44kQxCrwjq5rMv-Trah6xrviG8bQZm2mFsMFbNA29Giv2BzsSq87Uuu-47ue5LeYAAzmzxQfW+ktuQOHDB81HTte1r-2iGYaeW5n2e54LBdq0XceAR1U7CWc4mKIHwcZOYkPABUjNyHc-By-OgAWq7jgAa45AgAnnYAODWAAM9uOAD6dkCADlLgAwq4AOh2QHPgAaa4ALquQIAAJOACdNTqWK6Dj6LTDBOK4fffIP-gDDQTjyPr0k0FEb+KcwYyuKEvZBBUCzmHK+QYoh308A-AQ-h-AOFCEMKBMh5AOD-qEeBoDr4c0gf3Bgj9EH93kPyawaDAHAKrmAvO5QkF4JgcQ8IUwL6UMFjg6BwR47TjUBQ2w18ABsrCB4wJDr2Zg6VKaX2vgADgEbQ9hcCEFOkUZ4HQrkHAAG0AC6pCgEgLWC0XEHQcQDFcu7MY8h3aAXpCIfg1wGhWNztNQAIeMMOAIgQAqs2ABKhwAC6OQEADUDuBowJDmAsZWQ5gk0AcQMNB7ts5BMuA7MJlxInaPIYEvBlxI7uDiQsZJ-8Wh0RoIITSYQ0nhPzlk9JOTIhPzQRLXwsTKk0BrhU8JDj5F7FQf-DBroEj6DoDQJgvDkSNIcWaQQLAmj6NyOAIAA)
 
   - instance 타입[playground](https://www.typescriptlang.org/play?#code/PQKhCgAIUwCccD6XA1nYB6XKAGFwoeOUDprhKscBqrgDHWRQzgjDgCWAdgC4CmATgGYCGAxg5AArMDOAexqQA3lEiSabALYMAXJH50mtAOYTJbNQsg0ArjIBGzcAF9w4OgE8ADtwAqARkgBeXmyZ0qbADYAePiYhGgA+KztHACY3SAAlBgBHfSomBgATQIFhcIj7XmyaAHlbOlieT28-LOCcy2BgSBZ9Gg5vYUgdOgBJGhZBAApbeSCQgEpxBslptLp9JhFbcCmLcGbW9pEu3v6hxVHhEroxsU1IWfnF80taRlZObgBBGioZP1PpvVldZVUaDU+NnsAH5FL91Nc8k8Xm9fAlkqkMrF4Sk0plnq8-Ll1m0qB1tn1BCjEek9pAMbDiWiTuJPhcFpAlqspgT+lSMgNRF85AAiNgwvw8sxjSwcYTKSD8zG+RQJNjpYS+az+ClY2K06bSOSKHkAEUEah5ABozkDdDzAKg1gBFRwADk8bIVLYQA6M2xHmAA5rAImjgBdxnmi8WCXwMJ2+A0DR1+EVQjx0AAWbtjgl5kAAPpAeYImOlmDzU+mOJU-dR6Mx2FwY7GAKpxAAyH2mtjYcbBKghzMaUzFNAl0gAbhVm-EGGKs4Em7GjUpW-9Qurlo1PontemABJJhj2qafTPZpg6nc5k1b6YFrw6090TeNVZdntsfuPQcJEeZAcTivVmuz9wayRL3S-p8jLjjqwD-n6nxmCa25ZswiiAZ8jaDjywAHkwEHTFBZwXvBZyISB6bABeGGSFh7ZFDIVBlP4ZqTgA1gw1jhLcpYPJAABiqgMDQ6T8PWUjfC2fxqNB0zaLoBjGMwomSIwMp6IYJhMJCroAEJsPwADuDA7IInFUNxvGxBRVH+Pphn8JOfI6DyuS3mUMjWOZPH8Io6laTphLOUZP5nFq5qADpzgA2tfagIMPJThOAAnCa7Y8FQHB0TRkT0YxuSukUNBKgAct8BwiO48WJWZXEuVZ-m5mmPJybZ-rdg5uiZTleWFHOnz+TqvIyZAcmKJFUWQg0ACiAAeHC+Po2b+Jgk6ADgTgAeY4ABqtwIAE02ABRjkCACZdgAhPeErqqr4fHuDyACy-KVemADqSbnXmPIAMJNhdeoGkWrpBIIISxKN42TQwKoCodVmPZed36oauTDSNKicHQ00YJOgAKtYAi5OAJarkCADtDgA1C5AgAYQ5AgAR44AKU2rRtO17ZEkCjbIthBt90NMLD-g8k4z1RM9ADMxrplzd0ACzPQArLV87ZcIBi+L4bBGEG8MU-kDiRC47hizQ2X6JL0uy+C-x5pJSl5kYgiBgw-J5i02YsLQGTy44kQxCrwjq5rMv-Trah6xrviG8bQZm2mFsMFbNA29Giv2BzsSq87Uuu-47ue5LeYAAzmzxQfW+ktuQOHDB81HTte1r-2iGYaeW5n2e54LBdq0XceAR1U7CWc4mKIHwcZOYkPABUjNyHc-By-OgAWq7jgAa45AgAnnYAODWAAM9uOAD6dkCADlLgAwq4AOh2QHPgAaa4ALquQIAAJOACdNTqWK6Dj6LTDBOK4fffIP-gDDQTjyPr0k0FEb+KcwYyuKEvZBBUCzmHK+QYoh308A-AQ-h-AOFCEMKBMh5AOD-qEeBoDr4c0gf3Bgj9EH93kPyawaDAHAKrmAvO5QkF4JgcQ8IUwL6UMFjg6BwR47TjUBQ2w18ABsrCB4wJDr2Zg6VKaX2vgADgEbQ9hcCEFOkUZ4HQrkHAAG0AC6pCgEgLWC0XEHQcQDFcu7MY8h3aAXpCIfg1wGhWNztNQAIeMMOAIgQAqs2ABKhwAC6OQEADUDuBowJDmAsZWQ5gk0AcQMNB7ts5BMuA7MJlxInaPIYEvBlxI7uDiQsZJ-8Wh0RoIITSYQ0nhPzlk9JOTIhPzQRLXwsTKk0BrhU8JDj5F7FQf-DBroEj6DoDQJgvDkSNIcWaQQLAmj6NyOAIAA)
+
+  - 모듈[playground](https://www.typescriptlang.org/play?#code/PQKhCgAIUwCccD6XA1nYB6XKAGFwoeOUDprhKscBqrgDHWRQzgjDjDCAtDYC89Nh4ApgB4AOA9gE4AukAY04A7AM79x3ALwAiSTJYce-AN6SAvoq59Ia3t0gBDUUdEBlfZq3LIAE2YAzQwFcANvwGvjJgCKOX7gDCXqKiKlbUgAA1gBwTgCRjTACWALbaEpxJzABiCa7MkA7c6ZAyAHTAoulZOcwKyam6FRnZuer5hUnFZY1VubUpNmqVzXnGpmZD1a0FRaXlE73gi9SYkIAEg4Ado5D0jJAAZDHx1jq8AJ7seRbcACpneVKQkgnCAOaLbPVPvMzcTgJ5AArfCrCFRQSDg4SGDIALkeL3AEWAhlcrkgAFlOLY3MwjvwYNMOjIkpjsQBGGQAblx0DaM2JWNyACZKdT8e1ivTsQBmSlAA)
+
+  - namespace[playground](https://www.typescriptlang.org/play?#code/PQKhCgAIUg7BDAtgUwM4Ad4GNmUDprglWOAaq4Ax1kUM4Iw4CKG2uACsgE6oD2sA3lJP8gAe6DqwAukAJawxbAGaNILdlwCSsOR178dOgObIx6zQAoAlAC5UY1tL19+AXweQhI8ZCxdrcJLgC8kABEypywQQDcLi5uohJYADbwqKiQALK4kojoCcgoMqmhahpaLroGRiXm2rq1-KyGAK6ssJBiABaSqAB0YhwAyjZ25mU6zrrOMcJxnkkpkACaHI1S2bn5YoVsYcaldfwVu9WjdQ1iza0dXb0DQ7B6I-uQ42Pgk0Ww3RlAA)
+
+## 동적타입과 정적타입
+
+> 타입 체커가 컴파일 타임에 수행되는지 런타임에 서행되는지 여부
+
+### 정적타입
+
+- 개발자가 타입을 명시적으로 타이핑해야한다.
+  - Java, C3, C++
+- 타입체커와 타입 추론을 통해 일부 타이핑을 생략할 수 있다.
+  - TypeScript, Scala, Haskell
+- 보다 빠르게 오류를 잡아낼 수 있다.
+- 자동완성을 통해 데이터 타입 혹은 속성에 대한 확신을 가질 수 있다.
+
+### 동적타입
+
+- 동적 타입 시스템은 런타임 상황에도 타입이 동등한지 확인한다.
+- javascript는 느슨한 타입의 동적 타입 언어
+  - 변수는 어떤 타입과도 연결되지 않는다.
+  - 프로그램이 실행 모든 타입의 값으로 할당하거나 재할당 할 수 있으며 타입을 변경하거나 객체에 새로운 속성이나 메서드를 추가할 수 있다.
+
+## 구조적 타입과 명목적 타입
+
+> 타입스크립트가 타입을 이해하는 방법에 대한 이야기
+
+### 구조적 타입
+
+- 객체가 어떤 속성들을 가지는지 즉 구조를 기준으로 타입을 따진다.
+- 기본적으로 자바스크립트는 구조적 타입의 언어이다.
+
+### 명목적 타입
+
+- 각 타입이 고유하다는 것을 의미 즉 동일한 타입이나 데이터가 있더라도 타입을 공유할 수 없다.
+- 이름 기반으로 타입을 따진다.
+- 작성한 타입이 런타임에 존재한다.
+- C#, Java
+
+## 덕 타이핑
+
+> 타입스크립트의 타입 시스템은 구조적입니다.
+
+- 타입의 생김새가 오리와 같다면 바로 오리의 타입임을 뜻한다.
+- 거의가 오리와 같은 속성을 가지고 있다면 그것조차도 오리 타입
+- 일반적으로 동적 타입 시스템을 설명하는데 덕 타이핑이 사용된다.
+
+## 상위 타입과 하위 타입 [playground](https://www.typescriptlang.org/play?#code/PQKhCgAIUg7BDAtgUwM4Ad4GNmUDprglWOAaq4Ax1kUM4Iw4ANsgC6TywCeAKq+sgFzNvgWHLrgC8kAESoGAJwCWsAOYTBbTt0jiAjACYAzKuEbxsgK7JwdRpFOwA1rAD2Ad1jreN+09fhbDl24impLS8koSANy+XgHuwbp6UX7egcaQZhbgwMCAAwuAoeOQgAlzgCVDgB1LlgxBAILBtgAmyABmCsh1kMgAHgzIsHWokABujnJtAPzpMuaQfI3wtKgWlRoAQsFVMjLwrAA8oQqKAHztXT19kADyAEYAVshYTOMZ05Cz88hRS7gAwsEAYrb3OSOWDHbq9fpXW73SCPSa4GZzBaWBTdGSzHCQKqwOSIOaQADeUEgxIQKD4eyU4AAvsjYKj0bgAArIGSoYEEokkpAeCmKTnMRQeWCmRCXFnUipBZms4FYupYnF48QK3G0UGnfrStkg2FTBFvIA)
+
+> 구조적 하위 타입을 기반으로 하며 TypeScript에서의 모든 타입은 집합일 뿐이다.
+
+- 모든 타입은 집합일 뿐이지만 타입간에도 계층이 존재한다.
+- 타입 간의 관계는 특정 관계로 선언되었는지 여부가 아닌 포함된ㄷ 속성에 의해 결정
+- 최상위 타입은 시스템에서 허용되는 모든 가능한 값을 설명하는 타입
+- 서브타입은 슈퍼타입에 할당할 수 있다.
+  - 그 반대는 불가능하다.
+
+### 상위타입
+
+- any
+- unknown
+
+### 하위 타입
+
+- 상위 타입과 하위 타입 사이에는 무수히 많은 타입들이 존재한다.
+- never
+
+### 타입 캐스트
+
+- 타입 변수를 다른 타입의 변수에 할당하며 생기는 타입 오류로 그 계층을 확인할 수 있음
+- extends이용
+
+### 업캐스트
+
+- 상위 타입에 하위 타입을 할당
+- 안전한 상황으로 인지하여 컴파일러 오류 없이 대부분 암시적으로 가능
+
+### 다운캐스트
+
+- 안전하지 않은 상황으로 인지하여 컴파일러 오류 발생
+- any는 예외
+
+## 건전성 (Soundness)
+
+> 타입스크립트의 건전한 타입시스템이라는 개념에 대한 이야기
+> 건전함의 반대인 불건전함은 런타임에 문제를 유발할 수 있지만 타입스크립트는 일부 불건전한 동작을 허용한다.
+
+- 컴파일 타임에 알기 어려운 특정 타입을 안전하게 허용하는 것을 의미함
+  - 즉 컴파일러가 런타임 시점 값의 타입을 보장할 수 있다는 개념
+  - 모든 Javascript 코드를 지원하기 위함
+  - 건전한 언어는 데이터가 타입이 말하는 것과 일치하는지 확인하기 위해 때때로 런타임 검사를 허용
+  - 타입스크립트는 변환된 코드에 타입 인식 런타임에 영향ㅇ르 미치지 않는 것을 목표로 한다.
+
+Narrow
+keyof Typeof
+Generics
+Mapped Types(Enum, union타입으로 뽑아내기)
+Deep Dive
+TS config
+Object Type
+Creating Types from Type
+
+Code Samples
+Cheet sheat
+
+[React Cheat sheet typescript](https://github.com/typescript-cheatsheets/react)
+
+[Typescript ESlint](https://typescript-eslint.io/rules/)
