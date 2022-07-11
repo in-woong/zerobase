@@ -1,3 +1,3 @@
 export default function Fashion() {
-  return <div>Fashion</div>;
+  return <div>fashion</div>;
 }

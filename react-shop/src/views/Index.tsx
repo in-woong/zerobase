@@ -5,8 +5,8 @@ import Fashion from './Fashion';
 export default function Index() {
   return (
     <div>
-      <Fashion />
       <Accesory />
+      <Fashion />
       <Digital />
     </div>
   );
