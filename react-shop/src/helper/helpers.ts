@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const currencyFormat = new Intl.NumberFormat("en-US".{
+const currencyFormat = new Intl.NumberFormat("en-US",{
     style:"currency",
     currency:"USD",
     maximumFractionDigits:0,

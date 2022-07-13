@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { useRecoilValueLoadable } from 'recoil';
-import { Product, ProductsList } from '../store/product';
+import { Product, productsList } from '../store/products';
 
 import ProductsLoad from './ProductsLoad';
 
@@ -19,10 +19,10 @@ const defaultProps = {
 };
 
 const ItemList = ({ title, limit, scroll }: Items): JSX.Element => {
-  const ProductList = React.lazy(() => import('./ProductsList'));
-  const ProductLoadable = useRecoilValueLoadable<Product[]>(productsList);
+  const ProductsList = React.lazy(() => import('./ProductsList'));
+  const ProductsLoadable = useRecoilValueLoadable<Product[]>(productsList);
   let products: Product[] =
-    'hasValue' === ProductsLoadable.state ? ProductLodable.contents : [];
+    'hasValue' === ProductsLoadable.state ? ProductsLoadable.contents : [];
   switch (title) {
     case '패션':
       products = products
