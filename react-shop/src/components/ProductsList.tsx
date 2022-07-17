@@ -15,6 +15,7 @@ const ProductsList = ({
         products.slice(0, limit).map((product: Product) => {
           return (
             <Link
+              key={product.id}
               to={`/product/${product.id}`}
               className='card card-bordered border-gray200'
             >

@@ -27,7 +27,7 @@ function App() {
         ref={$hamburger}
       />
       <section className='drawer-content'>
-        <div className='App text-white'>
+        <div className='App text-white bg-white dark:bg-gray-800'>
           <Nav />
           <section className='main pt-16'>
             <Routes>
