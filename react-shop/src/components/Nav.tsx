@@ -6,7 +6,7 @@ import Search from './Search';
 export default function Nav() {
   const menues = [
     { name: 'fashion', title: '패션' },
-    { name: 'accessory', title: '액세서리' },
+    { name: 'accesory', title: '액세서리' },
     { name: 'digital', title: '디지털' },
   ];
 
@@ -25,11 +25,11 @@ export default function Nav() {
   };
 
   const setDark = () => {
-    $html?.classList.replace(themeLight, themeDark);
+    $html?.classList.add(themeDark);
     $html?.setAttribute('data-theme', themeDark);
   };
   const setLight = () => {
-    $html?.classList.replace(themeDark, themeLight);
+    $html?.classList.remove(themeDark);
     $html?.setAttribute('data-theme', themeLight);
   };
 
