@@ -1,16 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
-import Slider from './components/Slider';
 import Accesory from './views/Accesory';
 import Digital from './views/Digital';
 import Fashion from './views/Fashion';
 import Index from './views/Index';
 
-import { RecoilRoot, useRecoilState } from 'recoil';
-import { productState } from './store/product';
+
 import { useEffect, useRef } from 'react';
-import axios from 'axios';
 import { ScrollTop } from './helper/helpers';
 
 function App() {
@@ -34,15 +31,7 @@ function App() {
           <Nav />
           <section className='main pt-16'>
             <Routes>
-              <Route
-                path='/'
-                element={
-                  <>
-                    <Slider />
-                    <Index />
-                  </>
-                }
-              />
+              <Route path='/' element={<Index />} />
               {/* <Route path="*" element={<Error/>}/> */}
               {/* <Route path="/" element={<index/>}/> */}
               {/* <Route path='/product/:id' element={<Products />} /> */}

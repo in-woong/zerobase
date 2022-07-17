@@ -1,6 +1,6 @@
 import { atom, selector } from 'recoil';
-import ItemList from '../components/ItemList';
-import ProductsList from '../components/ProductsList';
+import { CART_ITEM } from '../composables/useCartLoad';
+import { productsList } from './products';
 export interface CartInfo {
   id: number;
   count: number;
@@ -38,30 +38,29 @@ export const cartTotal = selector<number>({
   get: ({ get }) => {
     const products = get(productsList);
     const cartItems = get(cartState);
-    return Object.keys(cartItems).reduce((acc:Number, id:string)=>{
-        return acc + cartItems[id].count * products[parseInte(id)-1].price||0;
-    },0);
+    return Object.keys(cartItems).reduce((acc: Number, id: string) => {
+      return acc + cartItems[id].count || 0;
+    }, 0);
   },
 });
 
-
 export const catList = selector<CartItems[]>({
-    key:"cartList",
-    get:({get})=>{
-        const products = get(productsList);
-        const cartITems = get(cartState);
-        return Object.keys(cartITems).map((id)=>{
-            const items = cartItems[id];
-            return(
-                id:items.id,
-                image:products[items.id -1].image,
-                title:products[items.id -1].title,
-                count: items.count,
-                price:Items.count * products[Items.id -1].price,
-            );
-        })
-    }});
-})
+  key: 'cartList',
+  get: ({ get }) => {
+    const products = get(productsList);
+    const cartItems = get(cartState);
+    return Object.keys(cartItems).map((id) => {
+      const items = cartItems[id];
+      return {
+        id: items.id,
+        image: products[items.id - 1].image,
+        title: products[items.id - 1].title,
+        count: items.count,
+        price: items.count * products[items.id - 1].price,
+      };
+    });
+  },
+});
 
 // const addToCart
 
