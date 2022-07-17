@@ -16,7 +16,6 @@ export default function Nav() {
   const themeDark = 'dark';
 
   const themeChange = (event: any) => {
-    console.log(event.target.checked);
     if (event.target.checked) {
       setLight();
     } else {
@@ -67,6 +66,7 @@ export default function Nav() {
           {menues.map((menu) => {
             return (
               <Link
+                key={menu.name}
                 className='btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white'
                 to={`/${menu.name}`}
               >
