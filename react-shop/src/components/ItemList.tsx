@@ -49,13 +49,17 @@ const ItemList = ({ title, limit, scroll }: Items): JSX.Element => {
 
   return (
     <>
-      <h2>
-        <div>
-          <Suspense fallback={<ProductsLoad limit={limit} />}>
-            <ProductsList products={products} limit={limit}></ProductsList>
-          </Suspense>
-        </div>
+      <h2 className='mb-5 lg:mb-8 text-3xl lg:text-4xl text-center font-bold'>
+        {title}
       </h2>
+      <div
+        className='grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list'
+        data-scroll={scroll}
+      >
+        <Suspense fallback={<ProductsLoad limit={limit} />}>
+          <ProductsList products={products} limit={limit}></ProductsList>
+        </Suspense>
+      </div>
     </>
   );
 };

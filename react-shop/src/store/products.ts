@@ -1,5 +1,5 @@
 import { selector } from 'recoil';
-const productsURL = '/products.json';
+const productsURL = 'https://fakestoreapi.com/products';
 
 interface Rating {
   rate?: 0;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { Product } from '../store/product';
+import type { Product } from '../store/products';
 import ProductsLoad from './ProductsLoad';
 
 const ProductsList = ({
@@ -18,11 +18,11 @@ const ProductsList = ({
               to={`/product/${product.id}`}
               className='card card-bordered border-gray200'
             >
-              <figure className='flex h-80 bg0white overflow-hidden'>
+              <figure className='flex h-80 bg-white overflow-hidden'>
                 <img
                   src={product.image}
                   alt='상품 이미지'
-                  className='transition-transform duration-300'
+                  className=' h-40 transition-transform duration-300'
                 />
               </figure>
               <div className='card-body bg-gray-100 dark:bg-gray-700'>
