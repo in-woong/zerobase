@@ -8,6 +8,7 @@ import Index from './views/Index';
 
 import { useEffect, useRef } from 'react';
 import { ScrollTop } from './helper/helpers';
+import Products from './views/Products';
 
 function App() {
   const $hamburger = useRef<HTMLInputElement>(null);
@@ -33,7 +34,7 @@ function App() {
               <Route path='/' element={<Index />} />
               {/* <Route path="*" element={<Error/>}/> */}
               {/* <Route path="/" element={<index/>}/> */}
-              {/* <Route path='/product/:id' element={<Products />} /> */}
+              <Route path='/product/:id' element={<Products />} />
               {/* <Route path='/cart' element={<Cart />} /> */}
               <Route path='/fashion' element={<Fashion />} />
               <Route path='/accesory' element={<Accesory />} />
