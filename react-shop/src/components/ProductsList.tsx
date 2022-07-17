@@ -25,7 +25,7 @@ const ProductsList = ({
                   className=' h-40 transition-transform duration-300'
                 />
               </figure>
-              <div className='card-body bg-gray-100 dark:bg-gray-700'>
+              <div className='card-body bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-200'>
                 <p className='card-title text-base'>{product.title}</p>
                 <p className='text-base'>{product.price}</p>
               </div>
