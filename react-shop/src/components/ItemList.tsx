@@ -49,7 +49,7 @@ const ItemList = ({ title, limit, scroll }: Items): JSX.Element => {
 
   return (
     <>
-      <h2 className='mb-5 lg:mb-8 text-3xl lg:text-4xl text-center font-bold'>
+      <h2 className='mb-5 lg:mb-8 text-3xl lg:text-4xl text-center font-bold text-black dark:text-gray-100'>
         {title}
       </h2>
       <div

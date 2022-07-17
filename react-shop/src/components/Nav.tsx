@@ -4,7 +4,7 @@ import { cartCount } from '../store/cart';
 import Search from './Search';
 
 export default function Nav() {
-  const munues = [
+  const menues = [
     { name: 'fashion', title: '패션' },
     { name: 'accessory', title: '액세서리' },
     { name: 'digital', title: '디지털' },
@@ -16,17 +16,26 @@ export default function Nav() {
   const themeDark = 'dark';
 
   const themeChange = (event: any) => {
+    console.log(event.target.checked);
     if (event.target.checked) {
       setLight();
+    } else {
+      setDark();
     }
   };
 
-  const setLight = () => {};
-  const setDark = () => {};
+  const setDark = () => {
+    $html?.classList.replace(themeLight, themeDark);
+    $html?.setAttribute('data-theme', themeDark);
+  };
+  const setLight = () => {
+    $html?.classList.replace(themeDark, themeLight);
+    $html?.setAttribute('data-theme', themeLight);
+  };
 
   return (
-    <section className='Nav fixed z-10 w-full navbar shadow-lg bg-black dark:bg-black text-neutral-content'>
-      <div className='navbar-start'>
+    <section className='fixed z-10 w-full navbar shadow-lg bg-white dark:bg-neutral text-neutral-content'>
+      <div className='flex w-full xl:container xl:m-auto'>
         <label
           htmlFor='side-menu'
           className='flex-none lg:hidden btn btn-square btn-ghost w-10 sm:w-auto'
@@ -46,35 +55,33 @@ export default function Nav() {
             />
           </svg>
         </label>
-        <Link
-          className='text-lg text-gray-700 dark:text-white font-bold whitespace-nowrap'
-          to={'/'}
-        >
-          React Shop
-        </Link>
-        <Link
-          className='btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white'
-          to={'/fashion'}
-        >
-          패션
-        </Link>
-        <Link
-          className='btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white'
-          to={'/accesory'}
-        >
-          액세서리
-        </Link>
-        <Link
-          className='btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white'
-          to={'/digital'}
-        >
-          디지털
-        </Link>
-      </div>
-      <div className='navbar-end'>
+        <h1 className='shrink-0 flex md:flex-none flex-1 mx-1 sm:mx-2'>
+          <Link
+            className='text-lg text-gray-700 dark:text-white font-bold whitespace-nowrap'
+            to={'/'}
+          >
+            React Shop
+          </Link>
+        </h1>
+        <div className='flex-none hidden md:flex md:flex-1 ml-2'>
+          {menues.map((menu) => {
+            return (
+              <Link
+                className='btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white'
+                to={`/${menu.name}`}
+              >
+                {menu.title}
+              </Link>
+            );
+          })}
+        </div>
         <div className='flex items-center px-2'>
           <label className='swap swap-rotate mr-2 sm:mr-4'>
-            <input type='checkbox' className='js-theme' />
+            <input
+              type='checkbox'
+              className='js-theme'
+              onChange={themeChange}
+            />
             <svg
               className='swap-off fill-white w-7 h-7'
               xmlns='http://www.w3.org/2000/svg'
@@ -91,7 +98,7 @@ export default function Nav() {
             </svg>
           </label>
           <Search />
-          <a className='btn btn-ghost w-10 sm:w-12 ml-1' href='/cart'>
+          <Link className='btn btn-ghost w-10 sm:w-12 ml-1' to={'/cart'}>
             <span className='relative'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -110,7 +117,7 @@ export default function Nav() {
                 0
               </span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

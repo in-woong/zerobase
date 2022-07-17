@@ -6,7 +6,6 @@ import Digital from './views/Digital';
 import Fashion from './views/Fashion';
 import Index from './views/Index';
 
-
 import { useEffect, useRef } from 'react';
 import { ScrollTop } from './helper/helpers';
 
