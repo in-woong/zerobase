@@ -12,7 +12,7 @@ const defaultProps = {
 
 const BreadCrumb = ({ category, crumb }: BreadCrumbs): JSX.Element => {
   return (
-    <div className='text-sm breadcrumbs'>
+    <div className='text-sm breadcrumbs text-gray-900 dark:text-gray-100'>
       <ul>
         <li>{!!Category[category] ? Category[category] : category}</li>
         <li>{crumb}</li>
