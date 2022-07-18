@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { toCurrencyFormat } from '../helper/helpers';
-import { CartItems, cartState, CartState } from '../store/cart';
+import { CartItems, cartState, CartState, removeFromCart } from '../store/cart';
 
 type Item = {
   data?: CartItems;
@@ -14,9 +14,9 @@ const defaultProps = {
 const CartList = ({ data }: Item): JSX.Element => {
   const [cart, setCart] = useRecoilState<CartState>(cartState);
 
-  //   const removeFromCartHandler = (id: number) => {
-  //     setCart(removeFromCart(cart, id));
-  //   };
+  const removeFromCartHandler = (id: number) => {
+    setCart(removeFromCart(cart, id));
+  };
 
   const addToCartHandler = (id: number) => {
     setCart({ ...cart, [id]: { id: id, count: (cart[id].count || 0) + 1 } });
@@ -44,10 +44,7 @@ const CartList = ({ data }: Item): JSX.Element => {
           <div className='btn-group'>
             <button
               className='btn btn-primary'
-              onClick={() =>
-                // removeFromCartHandler(parseInt(data.id))
-                console.log('click')
-              }
+              onClick={() => removeFromCartHandler(parseInt(data.id))}
             >
               -
             </button>

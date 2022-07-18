@@ -29,7 +29,7 @@ function App() {
       />
       <section className='drawer-content'>
         <Nav />
-        <section className='main pt-16 mb-auto'>
+        <section className='main pt-16 mb-auto bg-white dark:bg-gray-800'>
           <Routes>
             <Route path='/' element={<Index />} />
             {/* <Route path="*" element={<Error/>}/> */}
