@@ -6,9 +6,10 @@ import Digital from './views/Digital';
 import Fashion from './views/Fashion';
 import Index from './views/Index';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { ScrollTop } from './helper/helpers';
 import Products from './views/Products';
+import Cart from './views/Cart';
 
 function App() {
   const $hamburger = useRef<HTMLInputElement>(null);
@@ -27,22 +28,20 @@ function App() {
         ref={$hamburger}
       />
       <section className='drawer-content'>
-        <div className='App text-white bg-white dark:bg-gray-800'>
-          <Nav />
-          <section className='main pt-16'>
-            <Routes>
-              <Route path='/' element={<Index />} />
-              {/* <Route path="*" element={<Error/>}/> */}
-              {/* <Route path="/" element={<index/>}/> */}
-              <Route path='/product/:id' element={<Products />} />
-              {/* <Route path='/cart' element={<Cart />} /> */}
-              <Route path='/fashion' element={<Fashion />} />
-              <Route path='/accesory' element={<Accesory />} />
-              <Route path='/digital' element={<Digital />} />
-            </Routes>
-          </section>
-          <Footer />
-        </div>
+        <Nav />
+        <section className='main pt-16 mb-auto'>
+          <Routes>
+            <Route path='/' element={<Index />} />
+            {/* <Route path="*" element={<Error/>}/> */}
+            {/* <Route path="/" element={<index/>}/> */}
+            <Route path='/product/:id' element={<Products />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/fashion' element={<Fashion />} />
+            <Route path='/accesory' element={<Accesory />} />
+            <Route path='/digital' element={<Digital />} />
+          </Routes>
+        </section>
+        <Footer />
       </section>
       {/* <Drawer closeOverlay={closeOverlay}/> */}
     </BrowserRouter>

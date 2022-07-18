@@ -9,6 +9,7 @@ export const useCartLoad = () => {
   const setCartData = () => {
     localStorage.setItem(CART_ITEM, JSON.stringify(cartStore));
   };
+  
   useEffect(() => {
     setCartData();
   }, [cartStore]);
