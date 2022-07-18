@@ -74,7 +74,7 @@ const Search = () => {
     );
   }, [search, products]);
 
-  useEffect(() => {});
+  // useEffect(() => {});
   return (
     <>
       <div className='dropdown'>

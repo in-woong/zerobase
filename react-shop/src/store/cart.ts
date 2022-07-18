@@ -44,7 +44,7 @@ export const cartTotal = selector<number>({
   },
 });
 
-export const catList = selector<CartItems[]>({
+export const cartList = selector<CartItems[]>({
   key: 'cartList',
   get: ({ get }) => {
     const products = get(productsList);
@@ -62,6 +62,30 @@ export const catList = selector<CartItems[]>({
   },
 });
 
-// const addToCart
+export const addToCart = (cart: CartState, id: number) => {
+  if (!cartState[id]) {
+    cartState[id] = {
+      id,
+      count: 1,
+    };
+    return {
+      ...cart,
+      [id]: {
+        id,
+        count: 1,
+      },
+    };
+  }
+  cartState[id].count++;
+  return { ...cart, [id]: { id: id, count: cartState[id].count } };
+};
 
-// const removeToCart
+export const removeFromCart = (cart: CartState, id: number) => {
+  const tempCart = { ...cart };
+  if (tempCart[id].count === 1) {
+    delete tempCart[id];
+    return tempCart;
+  } else {
+    return { ...tempCart, [id]: { id: id, count: cart[id].count - 1 } };
+  }
+};

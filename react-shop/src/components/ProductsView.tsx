@@ -3,7 +3,6 @@ import { useRecoilValue, useRecoilValueLoadable } from 'recoil';
 import { toCurrencyFormat } from '../helper/helpers';
 import { Product, productsList } from '../store/products';
 import BreadCrumb from '../views/Breadcrumb';
-import ItemList from './ItemList';
 import Rating from './Rating';
 
 const ProductsView = () => {
@@ -12,7 +11,7 @@ const ProductsView = () => {
   const id = location.pathname.split('/')[2];
   const product = products.filter((product) => product.id === Number(id))[0];
   return (
-    <section className='pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto'>
+    <section className='pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto mb-auto'>
       <BreadCrumb category={product.category} crumb={product.title} />
       <div className='lg:flex lg:items-center mt-6 md:mt-14 px-2 lg:px-0'>
         <figure className='flex-shrink-0 rounded-2xl overflow-hidden px-4 py-4 bg-white view_image'>
@@ -22,7 +21,7 @@ const ProductsView = () => {
             className='object-contain w-full h-72'
           />
         </figure>
-        <div className='card-body px-1 lg:px-12'>
+        <div className='card-body px-1 lg:px-12 text-gray-800 dark:text-gray-100'>
           <h2 className='card-title'>
             {product.title}
             <span className='badge badge-accent ml-2'>NEW</span>
