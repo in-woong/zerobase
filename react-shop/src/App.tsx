@@ -10,6 +10,7 @@ import { useRef } from 'react';
 import { ScrollTop } from './helper/helpers';
 import Products from './views/Products';
 import Cart from './views/Cart';
+import Error from './views/Error';
 
 function App() {
   const $hamburger = useRef<HTMLInputElement>(null);
@@ -32,8 +33,7 @@ function App() {
         <section className='main pt-16 mb-auto bg-white dark:bg-gray-800'>
           <Routes>
             <Route path='/' element={<Index />} />
-            {/* <Route path="*" element={<Error/>}/> */}
-            {/* <Route path="/" element={<index/>}/> */}
+            <Route path='*' element={<Error />} />
             <Route path='/product/:id' element={<Products />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/fashion' element={<Fashion />} />
