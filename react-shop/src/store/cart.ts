@@ -38,8 +38,8 @@ export const cartTotal = selector<number>({
   get: ({ get }) => {
     const products = get(productsList);
     const cartItems = get(cartState);
-    return Object.keys(cartItems).reduce((acc: Number, id: string) => {
-      return acc + cartItems[id].count || 0;
+    return Object.keys(cartItems).reduce((acc: number, id: string) => {
+      return acc + cartItems[id].count * products[parseInt(id) - 1].price || 0;
     }, 0);
   },
 });
@@ -63,6 +63,7 @@ export const cartList = selector<CartItems[]>({
 });
 
 export const addToCart = (cart: CartState, id: number) => {
+  console.log('addCart');
   if (!cartState[id]) {
     cartState[id] = {
       id,

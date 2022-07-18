@@ -1,15 +1,18 @@
-import { useLocation } from 'react-router-dom';
-import { useRecoilValue, useRecoilValueLoadable } from 'recoil';
+import { Link, useLocation } from 'react-router-dom';
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from 'recoil';
 import { toCurrencyFormat } from '../helper/helpers';
+import { addToCart, cartState } from '../store/cart';
 import { Product, productsList } from '../store/products';
 import BreadCrumb from '../views/Breadcrumb';
 import Rating from './Rating';
 
 const ProductsView = () => {
+  const [cart, setCart] = useRecoilState(cartState);
   const products = useRecoilValue<Product[]>(productsList);
   const location = useLocation();
-  const id = location.pathname.split('/')[2];
+  const id = parseInt(location.pathname.split('/')[2]);
   const product = products.filter((product) => product.id === Number(id))[0];
+
   return (
     <section className='pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto mb-auto'>
       <BreadCrumb category={product.category} crumb={product.title} />
@@ -33,10 +36,15 @@ const ProductsView = () => {
             {toCurrencyFormat(product.price)}
           </p>
           <div className='card-actions'>
-            <button className='btn btn-primary'>장바구니에 담기</button>
-            <a className='btn btn-outline ml-1' href='/cart'>
+            <button
+              className='btn btn-primary'
+              onClick={() => setCart(addToCart(cart, id))}
+            >
+              장바구니에 담기
+            </button>
+            <Link className='btn btn-outline ml-1' to={'/cart'}>
               장바구니로 이동
-            </a>
+            </Link>
           </div>
         </div>
       </div>
