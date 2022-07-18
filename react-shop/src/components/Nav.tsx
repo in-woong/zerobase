@@ -71,7 +71,7 @@ export default function Nav() {
             return (
               <Link
                 key={menu.name}
-                className='btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white'
+                className='btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white invisible lg:visible'
                 to={`/${menu.name}`}
               >
                 {menu.title}
