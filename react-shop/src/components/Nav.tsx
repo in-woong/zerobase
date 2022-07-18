@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { cartCount } from '../store/cart';
 import Search from './Search';
+export const menues = [
+  { name: 'fashion', title: '패션' },
+  { name: 'accesory', title: '액세서리' },
+  { name: 'digital', title: '디지털' },
+];
 
 export default function Nav() {
-  const menues = [
-    { name: 'fashion', title: '패션' },
-    { name: 'accesory', title: '액세서리' },
-    { name: 'digital', title: '디지털' },
-  ];
+
   const [checked, setChecked] = useState(true);
 
   const count = useRecoilValue(cartCount);

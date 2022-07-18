@@ -1,3 +1,2 @@
-- Drawer 기능 (DaisyUI)
 - 검색 기능
 - star 구현

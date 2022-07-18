@@ -11,13 +11,15 @@ import { ScrollTop } from './helper/helpers';
 import Products from './views/Products';
 import Cart from './views/Cart';
 import Error from './views/Error';
+import { useCartLoad } from './composables/useCartLoad';
+import Drawer from './components/Drawer';
 
 function App() {
   const $hamburger = useRef<HTMLInputElement>(null);
   const closeOverlay = () => {
     $hamburger?.current?.click();
   };
-  // useCartLoad();
+  useCartLoad();
 
   return (
     <BrowserRouter>
@@ -43,7 +45,8 @@ function App() {
         </section>
         <Footer />
       </section>
-      {/* <Drawer closeOverlay={closeOverlay}/> */}
+      {/* closeOverlay={closeOverlay}  */}
+      <Drawer />
     </BrowserRouter>
   );
 }
