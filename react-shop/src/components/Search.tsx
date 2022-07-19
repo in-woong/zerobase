@@ -8,7 +8,7 @@ const Search = () => {
   const products: Product[] =
     'hasValue' === ProductsLodable.state ? ProductsLodable.contents : [];
   const [search, setSearch] = useState('');
-  const [disabled, setDisabled] = useState(true);
+  // const [disabled, setDisabled] = useState(true);
   const [filterItems, setFilterItems] = useState(products);
   const $search = useRef<HTMLInputElement>(null);
   const $searchedItem = '.js-searchedItem';
@@ -30,7 +30,7 @@ const Search = () => {
         return;
       }
       $next.querySelector($searchedItem).focus();
-    } else if (43 === event.keyCode) {
+    } else if (38 === event.keyCode) {
       event.preventDefault();
       let $next = event.target.nextElementSibling.querySelector('li a');
       !!$next && $next.click();
@@ -56,14 +56,14 @@ const Search = () => {
     }
   };
 
-  const toggleSearch = () => {
-    $search?.current?.classList.toggle('-z-10');
-    $search?.current?.classList.toggle('translate-y-full');
-    $search?.current?.classList.toggle('!opacity-100');
-    $search?.current?.blur();
-    setSearch('');
-    setFilterItems([]);
-  };
+  // const toggleSearch = () => {
+  //   $search?.current?.classList.toggle('-z-10');
+  //   $search?.current?.classList.toggle('translate-y-full');
+  //   $search?.current?.classList.toggle('!opacity-100');
+  //   $search?.current?.blur();
+  //   setSearch('');
+  //   setFilterItems([]);
+  // };
 
   useEffect(() => {
     setFilterItems(
@@ -102,32 +102,34 @@ const Search = () => {
           className='fixed left-0 top-4 -z-10 opacity-0 sm:opacity-100 sm:static sm:flex w-full input input-ghost focus:outline-0 rounded-none sm:rounded bg-gray-300 dark:bg-gray-600 !text-gray-800 dark:!text-white sm:transform-none transition-all js-searchInput'
           value={search}
           onChange={handleSearchChange}
+          onKeyDown={goSearchList}
         />
-        <ul className='!fixed left-0 sm:!absolute sm:top-14 menu dropdown-content w-full sm:w-64 max-h-96 shadow text-base-content overflow-y-auto bg-white dark:bg-gray-600'></ul>
+        <ul className='!fixed left-0 sm:!absolute sm:top-14 menu dropdown-content w-full sm:w-64 max-h-96 shadow text-base-content overflow-y-auto bg-white dark:bg-gray-600'>
+          {filterItems.map((product) => {
+            return (
+              <li key={product.id}>
+                <a
+                  href='#'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goLink(product.id);
+                  }}
+                  onTouchStart={(e) => {
+                    e.preventDefault();
+                    goLink(product.id);
+                  }}
+                  onKeyDown={changeTarget}
+                  className='text-left js-searchedItem'
+                >
+                  <span className='text-gray-600 dark:text-white line-clamp-2'>
+                    {product.title}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-      {filterItems.map((product) => {
-        return (
-          <li key={product.id}>
-            <a
-              href='#'
-              onClick={(e) => {
-                e.preventDefault();
-                goLink(product.id);
-              }}
-              onTouchStart={(e) => {
-                e.preventDefault();
-                goLink(product.id);
-              }}
-              onKeyDown={changeTarget}
-              className='text-left js-searchedItem'
-            >
-              <span className='text-gray-600 dark:text-white line-clamp-2'>
-                {product.title}
-              </span>
-            </a>
-          </li>
-        );
-      })}
     </>
   );
 };
