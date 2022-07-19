@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { menues } from './Nav';
 
 const Drawer = () => {
-  console.log(menues);
   return (
     <div className='drawer-side'>
       <label htmlFor='side-menu' className='drawer-overlay'></label>

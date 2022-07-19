@@ -11,7 +11,9 @@ const ProductsView = () => {
   const products = useRecoilValue<Product[]>(productsList);
   const location = useLocation();
   const id = parseInt(location.pathname.split('/')[2]);
-  const product = products.filter((product) => product.id === Number(id))[0];
+  const product: Product = products.filter(
+    (product) => product.id === Number(id)
+  )[0];
 
   return (
     <section className='pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto mb-auto'>
@@ -30,7 +32,7 @@ const ProductsView = () => {
             <span className='badge badge-accent ml-2'>NEW</span>
           </h2>
           <p>{product.description}</p>
-          <Rating />
+          <Rating rate={product.rating.rate} count={product.rating.count} />
           <p className='mt-2 mb-4 text-3xl'>
             {' '}
             {toCurrencyFormat(product.price)}
