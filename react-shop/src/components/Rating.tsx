@@ -23,7 +23,7 @@ const Rating = ({ rate, count }: Rating): JSX.Element => {
                 index % 2 == 0 ? 'mask-half-1' : 'mask-half-2'
               }`}
               disabled
-              checked={index + 1 <= rate}
+              checked={index + 0.5 <= rate * 2}
             />
           );
         })}
