@@ -1,11 +1,11 @@
 import { useRecoilValueLoadable } from 'recoil';
-import { CartItems, cartState, cartTotal } from '../store/cart';
+import { CartItems, cartTotal } from '../store/cart';
 import BreadCrumb from '../views/Breadcrumb';
 import { cartList } from '../store/cart';
-import ProductsLoad from './ProductsLoad';
 import CartList from './CartList';
 import { toCurrencyFormat } from '../helper/helpers';
 import { Link } from 'react-router-dom';
+import Confirm from './Confirm';
 
 const CartView = () => {
   const cartLoadable = useRecoilValueLoadable<CartItems[]>(cartList);
@@ -51,6 +51,7 @@ const CartView = () => {
           </div>
         </div>
       </div>
+      <Confirm />
     </>
   );
 };
