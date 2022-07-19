@@ -7,16 +7,19 @@ const Slider = () => {
       name: 'fashion',
       title: '물빠진 청바지',
       text: '이제 막 도착한 패션 청바지를 구경 하세요.',
+      img: 'https://images.unsplash.com/photo-1565084888279-aca607ecce0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     },
     {
       name: 'digital',
       title: '신속한 업무처리',
       text: '다양한 디지털 상품을 둘러보세요.',
+      img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     },
     {
       name: 'grocery',
       title: '신선한 식품',
       text: '농장 직배송으로 더욱 신선한 식료품을 만나보세요.',
+      img: 'https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     },
   ];
 
@@ -24,6 +27,7 @@ const Slider = () => {
     name: string;
     title: string;
     text: string;
+    img: string;
   }
 
   return (
@@ -62,7 +66,7 @@ const Slider = () => {
                 </svg>
               </Link>
             </div>
-            <img src={`./image_shop_${item.name}.jpeg`} alt={`${item.name}`} />
+            <img src={`${item.img}`} alt={`${item.name}`} />
           </div>
         );
       })}
