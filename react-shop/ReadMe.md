@@ -1,5 +1,2 @@
 - 검색 기능
-- star 구현
-- 구매하기 누르면 confirm창
-- Hover 시 animation
 - vercel 배포
