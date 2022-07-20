@@ -45,8 +45,8 @@ function App() {
         </section>
         <Footer />
       </section>
-      {/* closeOverlay={closeOverlay}  */}
-      <Drawer />
+
+      <Drawer closeOverlay={closeOverlay} />
     </BrowserRouter>
   );
 }

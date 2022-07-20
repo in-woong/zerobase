@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import { menues } from './Nav';
 
-const Drawer = () => {
+interface DrawerProps {
+  closeOverlay: () => void;
+}
+
+const Drawer = ({ closeOverlay }: DrawerProps) => {
   return (
     <div className='drawer-side'>
       <label htmlFor='side-menu' className='drawer-overlay'></label>
@@ -13,6 +17,7 @@ const Drawer = () => {
                 key={menu.name}
                 className='text-gray-700 active:text-white dark:text-white'
                 to={`/${menu.name}`}
+                onClick={closeOverlay}
               >
                 {menu.title}
               </Link>
