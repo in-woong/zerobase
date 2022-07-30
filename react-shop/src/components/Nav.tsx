@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { cartCount } from '../store/cart';
@@ -9,16 +9,16 @@ export const menues = [
   { name: 'digital', title: '디지털' },
 ];
 
-export default function Nav() {
+const Nav = () => {
   const count = useRecoilValue(cartCount);
   const $html = document.querySelector('html');
   const themeLight = 'light';
   const themeDark = 'dark';
-  const getScroll = () => {
-    console.log('go up', window);
-    const $document = document.getElementById('root');
-    return window.scrollTo(0, 0);
-  };
+  // const getScroll = () => {
+  //   console.log('go up', window);
+  //   const $document = document.getElementById('root');
+  //   return window.scrollTo(0, 0);
+  // };
 
   const themeChange = (event: any) => {
     if (event.target.checked) {
@@ -134,9 +134,11 @@ export default function Nav() {
               </span>
             </span>
           </Link>
-          <button onClick={getScroll}>get ScrollY</button>
+          {/* <button onClick={getScroll}>get ScrollY</button> */}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Nav;

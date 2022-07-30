@@ -8,6 +8,7 @@ const Search = () => {
   const products: Product[] =
     'hasValue' === ProductsLodable.state ? ProductsLodable.contents : [];
   const [search, setSearch] = useState('');
+  const [disabled, setDisabled] = useState(true);
   const [filterItems, setFilterItems] = useState(products);
   const $search = useRef<HTMLInputElement>(null);
   const $searchedItem = '.js-searchedItem';
@@ -55,6 +56,15 @@ const Search = () => {
     }
   };
 
+  const toggleSearch = () => {
+    $search?.current?.classList.toggle('-z-10');
+    $search?.current?.classList.toggle('translate-y-full');
+    $search?.current?.classList.toggle('!opacity-100');
+    $search?.current?.blur();
+    setSearch('');
+    setFilterItems([]);
+  };
+
   useEffect(() => {
     setFilterItems(
       products.filter(($elm) => {
@@ -63,12 +73,19 @@ const Search = () => {
       })
     );
   }, [search, products]);
+
+  useEffect(() => {
+    if ('hasValue' === ProductsLodable.state) {
+      setDisabled(false);
+    }
+  }, [ProductsLodable.state]);
   return (
     <>
       <div className='dropdown'>
         <button
           type='button'
           className='flex sm:hidden w-10 sm:w-auto mx-0 px-0 sm:mx-2 sm:px-2 btn btn-ghost js-search'
+          onClick={toggleSearch}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -88,6 +105,7 @@ const Search = () => {
           type='text'
           placeholder='검색'
           className='fixed left-0 top-4 -z-10 opacity-0 sm:opacity-100 sm:static sm:flex w-full input input-ghost focus:outline-0 rounded-none sm:rounded bg-gray-300 dark:bg-gray-600 !text-gray-800 dark:!text-white sm:transform-none transition-all js-searchInput'
+          disabled={disabled}
           value={search}
           onChange={handleSearchChange}
           onKeyDown={goSearchList}
