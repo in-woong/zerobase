@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { cartCount } from '../store/cart';
@@ -10,9 +10,6 @@ export const menues = [
 ];
 
 export default function Nav() {
-
-  const [checked, setChecked] = useState(true);
-
   const count = useRecoilValue(cartCount);
   const $html = document.querySelector('html');
   const themeLight = 'light';
@@ -21,21 +18,30 @@ export default function Nav() {
   const themeChange = (event: any) => {
     if (event.target.checked) {
       setLight();
-      setChecked(true);
     } else {
       setDark();
-      setChecked(false);
     }
+  };
+  const setLight = () => {
+    $html?.classList.remove(themeDark);
+    $html?.setAttribute('data-theme', themeLight);
+    localStorage.setItem('theme', themeLight);
   };
 
   const setDark = () => {
     $html?.classList.add(themeDark);
     $html?.setAttribute('data-theme', themeDark);
+    localStorage.setItem('theme', themeDark);
   };
-  const setLight = () => {
-    $html?.classList.remove(themeDark);
-    $html?.setAttribute('data-theme', themeLight);
-  };
+
+  useEffect(() => {
+    if (themeLight === localStorage.getItem('theme')) {
+      setLight();
+      document.querySelector('.js-theme')?.setAttribute('checked', 'checked');
+    } else {
+      setDark();
+    }
+  }, []);
 
   return (
     <section className='fixed z-10 w-full navbar shadow-lg bg-white dark:bg-neutral text-neutral-content'>
@@ -86,7 +92,6 @@ export default function Nav() {
               type='checkbox'
               className='js-theme'
               onChange={themeChange}
-              checked={checked}
             />
             <svg
               className='swap-on fill-black w-7 h-7'
