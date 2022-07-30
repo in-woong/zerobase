@@ -16,11 +16,11 @@ import Drawer from './components/Drawer';
 
 function App() {
   const $hamburger = useRef<HTMLInputElement>(null);
+  const $pages = useRef(null);
   const closeOverlay = () => {
     $hamburger?.current?.click();
   };
   useCartLoad();
-
   return (
     <BrowserRouter>
       <ScrollTop />
@@ -30,7 +30,7 @@ function App() {
         className='drawer-toggle'
         ref={$hamburger}
       />
-      <section className='drawer-content'>
+      <section className='drawer-content' ref={$pages}>
         <Nav />
         <section className='main pt-16 mb-auto bg-white dark:bg-gray-800'>
           <Routes>

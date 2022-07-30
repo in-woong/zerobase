@@ -3,6 +3,7 @@ import ReactDOM, { createRoot } from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
 import App from './App';
 import { CART_ITEM } from './composables/useCartLoad';
+import { ScrollTop } from './helper/helpers';
 import './index.css';
 import { cartState } from './store/cart';
 
