@@ -1,6 +1,5 @@
-import { useRecoilValue } from 'recoil';
 import ItemList from '../components/ItemList';
-import BreadCrumb from './Breadcrumb';
+import BreadCrumb from '../components/Breadcrumb';
 
 export default function Digital() {
   return (

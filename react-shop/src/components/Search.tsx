@@ -8,7 +8,6 @@ const Search = () => {
   const products: Product[] =
     'hasValue' === ProductsLodable.state ? ProductsLodable.contents : [];
   const [search, setSearch] = useState('');
-  // const [disabled, setDisabled] = useState(true);
   const [filterItems, setFilterItems] = useState(products);
   const $search = useRef<HTMLInputElement>(null);
   const $searchedItem = '.js-searchedItem';
@@ -56,15 +55,6 @@ const Search = () => {
     }
   };
 
-  // const toggleSearch = () => {
-  //   $search?.current?.classList.toggle('-z-10');
-  //   $search?.current?.classList.toggle('translate-y-full');
-  //   $search?.current?.classList.toggle('!opacity-100');
-  //   $search?.current?.blur();
-  //   setSearch('');
-  //   setFilterItems([]);
-  // };
-
   useEffect(() => {
     setFilterItems(
       products.filter(($elm) => {
@@ -73,8 +63,6 @@ const Search = () => {
       })
     );
   }, [search, products]);
-
-  // useEffect(() => {});
   return (
     <>
       <div className='dropdown'>
