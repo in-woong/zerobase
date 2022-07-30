@@ -17,7 +17,7 @@ const ProductsList = ({
             <Link
               key={product.id}
               to={`/product/${product.id}`}
-              className='card card-bordered border-gray200'
+              className='card card-bordered border-gray200 mx-10 lg:m-0'
             >
               <figure className='flex h-80 bg-white overflow-hidden'>
                 <img

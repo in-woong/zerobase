@@ -14,6 +14,11 @@ export default function Nav() {
   const $html = document.querySelector('html');
   const themeLight = 'light';
   const themeDark = 'dark';
+  const getScroll = () => {
+    console.log('go up', window);
+    const $document = document.getElementById('root');
+    return window.scrollTo(0, 0);
+  };
 
   const themeChange = (event: any) => {
     if (event.target.checked) {
@@ -129,6 +134,7 @@ export default function Nav() {
               </span>
             </span>
           </Link>
+          <button onClick={getScroll}>get ScrollY</button>
         </div>
       </div>
     </section>
