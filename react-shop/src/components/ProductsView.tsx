@@ -3,7 +3,7 @@ import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from 'recoil';
 import { toCurrencyFormat } from '../helper/helpers';
 import { addToCart, cartState } from '../store/cart';
 import { Product, productsList } from '../store/products';
-import BreadCrumb from '../views/Breadcrumb';
+import BreadCrumb from '../components/Breadcrumb';
 import Rating from './Rating';
 
 const ProductsView = () => {

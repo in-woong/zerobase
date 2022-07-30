@@ -1,6 +1,6 @@
 import { useRecoilValueLoadable } from 'recoil';
 import { CartItems, cartTotal } from '../store/cart';
-import BreadCrumb from '../views/Breadcrumb';
+import BreadCrumb from './Breadcrumb';
 import { cartList } from '../store/cart';
 import CartList from './CartList';
 import { toCurrencyFormat } from '../helper/helpers';

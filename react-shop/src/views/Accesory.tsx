@@ -1,5 +1,5 @@
 import ItemList from '../components/ItemList';
-import BreadCrumb from './Breadcrumb';
+import BreadCrumb from '../components/Breadcrumb';
 
 const Accesory = (): JSX.Element => {
   return (

@@ -63,7 +63,6 @@ export const cartList = selector<CartItems[]>({
 });
 
 export const addToCart = (cart: CartState, id: number) => {
-  console.log('addCart');
   if (!cartState[id]) {
     cartState[id] = {
       id,

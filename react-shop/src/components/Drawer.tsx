@@ -12,9 +12,8 @@ const Drawer = ({ closeOverlay }: DrawerProps) => {
       <ul className='menu w-60 sm:w-80 p-4 overflow-y-auto bg-white dark:bg-base-100'>
         {menues.map((menu) => {
           return (
-            <li>
+            <li key={menu.name}>
               <Link
-                key={menu.name}
                 className='text-gray-700 active:text-white dark:text-white'
                 to={`/${menu.name}`}
                 onClick={closeOverlay}
