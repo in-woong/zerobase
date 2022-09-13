@@ -57,10 +57,16 @@
 
 3. TypeScript Study
 
+- [타입가드 및 열거형](https://velog.io/@inwoong100/Typescript-Study-%ED%83%80%EC%9E%85%EA%B0%80%EB%93%9C-%EB%B0%8F-%EC%97%B4%EA%B1%B0%ED%98%95)
+
+- [제네릭, 타입단언, TypeAlias와 interface](https://velog.io/@inwoong100/Typescript-study-%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85%EB%8B%A8%EC%96%B8-TypeAlias%EC%99%80-Interface)
+
+- [유틸리티 타입](https://velog.io/@inwoong100/Typescript-Study-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0-%ED%83%80%EC%9E%85)
+
 4. 기술면접 TIL
 
 ## Code Test
 
 - [코테 깃헙 주소 링크](https://github.com/in-woong/JS-CodeTest/tree/main/zerobase)
   - [강의 내용 정리](https://github.com/in-woong/JS-CodeTest/tree/main/zerobase/lecture)
-  - [테스트 코드 정리](https://github.com/in-woong/JS-CodeTest/tree/main/zerobase/test)
+  - [코드 테스트 결과 코드 정리](https://github.com/in-woong/JS-CodeTest/tree/main/zerobase/test)
